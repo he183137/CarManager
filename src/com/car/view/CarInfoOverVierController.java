@@ -67,13 +67,18 @@ public class CarInfoOverVierController {
 	@FXML
 	private void handleDeleteCar() throws Exception {
 		CarInfo info = carTable.getSelectionModel().getSelectedItem();
-		boolean isdelOK = dbHelper.delCarInfo(info);
-		if(!isdelOK){
-			logger.error("del fail £¬id£º"+info.getC_id());
+		if(info == null){
+			FxDialogs.showError("No Selection", "No Car Selected");
+		    
 		}else{
-			logger.info("del is ok,id "+info.getC_id());
+			boolean isdelOK = dbHelper.delCarInfo(info);
+			if(!isdelOK){
+				logger.error("del fail £¬id£º"+info.getC_id());
+			}else{
+				logger.info("del is ok,id "+info.getC_id());
+			}
+			carTable.getItems().remove(info);
 		}
-//		int selectedIndex = carTable.getSelectionModel().getSelectedIndex();
-		carTable.getItems().remove(info);
+		
 	}
 }
