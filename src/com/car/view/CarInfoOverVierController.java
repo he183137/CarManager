@@ -29,8 +29,8 @@ public class CarInfoOverVierController {
 	private TableColumn<CarInfo, String> c_car_id;
 	@FXML
 	private TableColumn<CarInfo, String> c_Inspection_expirationTime;
-	@FXML
-	private TableColumn<CarInfo, String> c_Insurance_expirationTime;
+//	@FXML
+//	private TableColumn<CarInfo, String> c_Insurance_expirationTime;
 
 	private Main Main;
 	private DBHelper dbHelper;
@@ -74,10 +74,11 @@ public class CarInfoOverVierController {
 			boolean isdelOK = dbHelper.delCarInfo(info);
 			if(!isdelOK){
 				logger.error("del fail £¬id£º"+info.getC_id());
+				FxDialogs.showError("Delete Error", "É¾³ý³µÁ¾ÐÅÏ¢´íÎó");
 			}else{
+				carTable.getItems().remove(info);
 				logger.info("del is ok,id "+info.getC_id());
-			}
-			carTable.getItems().remove(info);
+			}	
 		}
 		
 	}
