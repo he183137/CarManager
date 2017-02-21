@@ -19,12 +19,17 @@ public class DBHelper {
     private static Logger logger = Logger.getLogger(DBHelper.class);
     private JdbcUtils jdbcUtils;
     private String db_path = "db\\CarData.db";
-   
+    private static DBHelper instance = new DBHelper();
 
-    public DBHelper() {
+    private DBHelper() {
         this.jdbcUtils = new JdbcUtils(db_path);
         init();
     }
+    
+    public static DBHelper getInstance(){
+    	return instance;
+    } 
+    
     private  void init(){
         jdbcUtils.getConnection();
     }
@@ -243,6 +248,10 @@ public class DBHelper {
             return confpojo;
         }
         return  null;
+    }
+    
+    public void closeConn(){
+    	jdbcUtils.releaseConn();
     }
 //    public static void main(String[] args) throws Exception {
 //    	System.out.println(UUID.randomUUID().toString());

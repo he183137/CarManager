@@ -33,8 +33,9 @@ public class CarInfoOverVierController {
 //	private TableColumn<CarInfo, String> c_Insurance_expirationTime;
 
 	private Main Main;
-	private DBHelper dbHelper;
+	
 	private static Logger logger = Logger.getLogger(CarInfoOverVierController.class);
+	private DBHelper dbHelper;
 	public void setMain(Main main) {
 		this.Main = main;
 		carTable.setItems(main.getCarInfosData());
@@ -50,7 +51,7 @@ public class CarInfoOverVierController {
 
 	@FXML
 	private void initialize() {
-		dbHelper = new DBHelper();
+		dbHelper = DBHelper.getInstance();
 		c_id.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
 		c_name.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
 		c_identification_card.setCellValueFactory(cellData -> cellData.getValue().getC_identification_cardProperty());
@@ -73,8 +74,8 @@ public class CarInfoOverVierController {
 		}else{
 			boolean isdelOK = dbHelper.delCarInfo(info);
 			if(!isdelOK){
-				logger.error("del fail £¬id£º"+info.getC_id());
-				FxDialogs.showError("Delete Error", "É¾³ý³µÁ¾ÐÅÏ¢´íÎó");
+				logger.error("del fail ï¿½ï¿½idï¿½ï¿½"+info.getC_id());
+				FxDialogs.showError("Delete Error", "åˆ é™¤å¤±è´¥");
 			}else{
 				carTable.getItems().remove(info);
 				logger.info("del is ok,id "+info.getC_id());

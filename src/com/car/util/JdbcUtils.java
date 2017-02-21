@@ -58,7 +58,7 @@ public class JdbcUtils {
 	
 	
 	/**
-	 * 增加、删除�?�改 
+	 * 增加、删除、修改
 	 * @param sql
 	 * @param params
 	 * @return
