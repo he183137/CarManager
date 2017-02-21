@@ -78,7 +78,6 @@ public class CarInfoEditDialogController {
         	carinfo.setC_name(c_nameField.getText());
         	carinfo.setC_phone(c_phoneField.getText());
         	carinfo.setC_Inspection_expirationTime(TimeUtil.getLocalDate2String(c_Inspection_expirationTimePicker.getValue()));
-        	dbHelper.addCarInfo(carinfo);
             okClicked = true;
             dialogStage.close();
         }
