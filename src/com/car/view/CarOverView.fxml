@@ -19,9 +19,9 @@
                            <children>
                               <HBox layoutY="29.0" prefHeight="54.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                                  <children>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #FFFF33; -fx-border-color: #888888;" text="修改" />
+                                    <Button mnemonicParsing="false" onAction="#handleEditPerson" style="-fx-background-color: #FFFF33; -fx-border-color: #888888;" text="修改" />
                                     <Button mnemonicParsing="false" onAction="#handleDeleteCar" style="-fx-background-color: #FF7744; -fx-border-color: #888888;" text="删除" />
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #33FFAA; -fx-border-color: #888888;" text="添加" />
+                                    <Button mnemonicParsing="false" onAction="#handleNewCarInfo" style="-fx-background-color: #33FFAA; -fx-border-color: #888888;" text="添加" />
                                  </children>
                                  <padding>
                                     <Insets top="4.0" />

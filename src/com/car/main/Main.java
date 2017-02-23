@@ -1,9 +1,11 @@
 package com.car.main;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.car.dao.DBHelper;
 import com.car.pojo.CarInfo;
+import com.car.view.CarInfoEditDialogController;
 import com.car.view.CarInfoOverVierController;
 
 import javafx.application.Application;
@@ -12,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -26,8 +29,6 @@ public class Main extends Application {
 		dbHelper = DBHelper.getInstance();
 		List<CarInfo> list = dbHelper.getAllCarInfo();
 		carInfosData.addAll(list);
-
-
 	}
 	
 	public ObservableList<CarInfo> getCarInfosData() {
@@ -41,7 +42,37 @@ public class Main extends Application {
 		primaryStage.setTitle("车检管理系统");
 		showMain();
 	}
-   
+	
+	
+	public boolean showCarInfoEditDialog(CarInfo carInfo,String actionName) {
+	    try {
+	        // Load the fxml file and create a new stage for the popup dialog.
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(Main.class.getResource("../view/CarEditDialog.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+
+	        // Create the dialog Stage.
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle(actionName);
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+
+	        // Set the person into the controller.
+	        CarInfoEditDialogController controller = loader.getController();
+	        controller.setDialogStage(dialogStage);
+	        controller.setCarInfo(carInfo);
+
+	        // Show the dialog and wait until the user closes it
+	        dialogStage.showAndWait();
+
+	        return controller.isOkClicked();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
 	
 	private void showMain(){
 		

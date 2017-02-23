@@ -1,9 +1,11 @@
 package com.car.view;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import com.car.dao.DBHelper;
 import com.car.pojo.CarInfo;
+import com.car.util.CommonUtil;
 import com.car.util.TimeUtil;
 
 import javafx.fxml.FXML;
@@ -13,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 public class CarInfoEditDialogController {
 
@@ -34,34 +37,18 @@ public class CarInfoEditDialogController {
 	private CarInfo carinfo;
 	private Stage dialogStage;
 	private boolean okClicked;
-	private DBHelper dbHelper;
+	public boolean isOkClicked() {
+		return okClicked;
+	}
+
+	
 	
 	public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
 	@FXML
 	private void initialize() {
-		dbHelper = DBHelper.getInstance();
-		c_Inspection_expirationTimePicker = new DatePicker();
-		c_Inspection_expirationTimePicker.setPromptText("YYYY-MM-dd");
-		c_Inspection_expirationTimePicker.setValue(LocalDate.now());
-		final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
-			@Override
-			public DateCell call(final DatePicker datePicker) {
-				return new DateCell() {
-					@Override
-					public void updateItem(LocalDate item, boolean empty) {
-						super.updateItem(item, empty);
 
-						if (item.isBefore(c_Inspection_expirationTimePicker.getValue().plusDays(1))) {
-							setDisable(true);
-							setStyle("-fx-background-color: #ffc0cb;");
-						}
-					}
-				};
-			}
-		};
-		c_Inspection_expirationTimePicker.setDayCellFactory(dayCellFactory);
 	}
 	
 	
@@ -71,16 +58,40 @@ public class CarInfoEditDialogController {
      */
     @FXML
     private void handleOk() throws Exception {
-        if (isInputValid()) {
+//        if (isInputValid()) {
         	carinfo.setC_address(c_addressField.getText());
         	carinfo.setC_car_id(c_caridField.getText());
         	carinfo.setC_identification_card(c_identification_cardField.getText());
         	carinfo.setC_name(c_nameField.getText());
         	carinfo.setC_phone(c_phoneField.getText());
-        	carinfo.setC_Inspection_expirationTime(TimeUtil.getLocalDate2String(c_Inspection_expirationTimePicker.getValue()));
-            okClicked = true;
-            dialogStage.close();
-        }
+        	c_Inspection_expirationTimePicker.setConverter(new StringConverter<LocalDate>() {
+        		 DateTimeFormatter dateFormatter = 
+        	                DateTimeFormatter.ofPattern( "yyyy-MM-dd");
+        	            @Override
+        	            public String toString(LocalDate date) {
+        	                if (date != null) {
+        	                    return dateFormatter.format(date);
+        	                } else {
+        	                    return "";
+        	                }
+        	            }
+        	            @Override
+        	            public LocalDate fromString(String string) {
+        	                if (string != null && !string.isEmpty()) {
+        	                    return LocalDate.parse(string, dateFormatter);
+        	                } else {
+        	                    return null;
+        	                }
+        	            }
+
+			});
+        	carinfo.setC_Inspection_expirationTime(c_Inspection_expirationTimePicker.getEditor().getText());
+        	if(isInputValid()){
+        		okClicked = true;
+                dialogStage.close();
+        	}
+            
+//        }
     }
 
     /**
@@ -90,11 +101,10 @@ public class CarInfoEditDialogController {
     private void handleCancel() {
         dialogStage.close();
     }
-
+     
 	public void setCarInfo(CarInfo carInfo) {
 		this.carinfo = carInfo; 
 		if (carInfo != null) {
-			if (isInputValid()) {
 				c_nameField.setText(carInfo.getC_name());
 				c_identification_cardField.setText(carInfo.getC_identification_card());
 				c_phoneField.setText(carInfo.getC_phone());
@@ -102,7 +112,7 @@ public class CarInfoEditDialogController {
 				c_caridField.setText(carInfo.getC_car_id());
 				c_Inspection_expirationTimePicker
 						.setValue(TimeUtil.getStr2LocalDate(carInfo.getC_Inspection_expirationTime()));
-			}
+				
 		} 
 	}
 
@@ -113,35 +123,39 @@ public class CarInfoEditDialogController {
 	 */
 	private boolean isInputValid() {
 		String errorMessage = "";
-
 		if (c_nameField.getText() == null || c_nameField.getText().length() == 0) {
-			errorMessage += "No valid name!\n";
+			
+			errorMessage += "请输入姓名";
 		}
 		if (c_identification_cardField.getText() == null || c_identification_cardField.getText().length() == 0) {
-			errorMessage += "No valid c_identification_card!\n";
+			errorMessage += "请输入身份证号";
 		}
 		if (c_phoneField.getText() == null || c_phoneField.getText().length() == 0) {
-			errorMessage += "No valid phone!\n";
+			errorMessage += "请输入电话号码";
 		}
 
 		if (c_addressField.getText() == null || c_addressField.getText().length() == 0) {
-			errorMessage += "No validaddress!\n";
+			errorMessage += "请输入家庭地址";
 		}
 
 		if (c_caridField.getText() == null || c_caridField.getText().length() == 0) {
-			errorMessage += "No valid carID!\n";
+			errorMessage += "请输入车牌号";
 		}
 
 		if (c_Inspection_expirationTimePicker.getValue() == null
 				|| c_Inspection_expirationTimePicker.getValue().toString().equals("")) {
-			errorMessage += "No valid Inspection_expirationTime!\n";
+			errorMessage += "请输入验车时间";
+		}else {
+			if (!CommonUtil.isDate(c_Inspection_expirationTimePicker.getValue().toString())){
+				errorMessage += "时间格式不正确";
+			}
 		}
-
+         
 		if (errorMessage.length() == 0) {
 			return true;
 		} else {
 			// Show the error message.
-			FxDialogs.showError("NO Vaild Vaule", errorMessage);
+			FxDialogs.showError("无效输入", errorMessage);
 			return false;
 		}
 	}

@@ -78,7 +78,7 @@ public class DBHelper {
      * @throws Exception
      */
     public CarInfo getCarInfoByOne(String id) throws Exception {
-        List<Object> parm = new ArrayList();
+        List<Object> parm = new ArrayList<Object>();
         parm.add(id);
         String sql = "select c_id, " +
                 "t.c_identification_card," +
@@ -138,7 +138,7 @@ public class DBHelper {
             Iterator<CarInfo> iterator = cars.iterator();
             while (iterator.hasNext()) {
                 CarInfo CarInfo = iterator.next();
-                boolean flag = updateCarInfo(CarInfo);
+                updateCarInfo(CarInfo);
             }
         }
     }
@@ -155,11 +155,11 @@ public class DBHelper {
            String address= CarInfo.getC_address();
            String car_id = CarInfo.getC_car_id();
            String inspection_time = CarInfo.getC_Inspection_expirationTime();
-           String insurance_time = CarInfo.getC_Insurance_expirationTime();
+           //String insurance_time = CarInfo.getC_Insurance_expirationTime();
            String sql = "UPDATE t_info " +
                    " SET c_identification_card = '"+identification_card +"'," +
                    " c_Inspection_expirationTime = '"+inspection_time+"'," +
-                   " c_Insurance_expirationTime='"+insurance_time+"'," +
+                   " c_Insurance_expirationTime='"+""+"'," +
                    " c_name = '"+name+"'," +
                    " c_phone='"+phone+"'," +
                    " c_car_id='"+car_id+"'," +
@@ -178,14 +178,17 @@ public class DBHelper {
     public boolean addCarInfo(CarInfo CarInfo) throws Exception{
         boolean flag = false;
         if (CarInfo != null) {
-            String id =  CarInfo.getC_id()==null|| CarInfo.getC_id().equals("")?UUID.randomUUID().toString(): CarInfo.getC_id();
+        	if( CarInfo.getC_id()==null ||"".equals(CarInfo.getC_id())){
+        		CarInfo.setC_id(UUID.randomUUID().toString());
+        	}
+            String id = CarInfo.getC_id();
             String identification_card = CarInfo.getC_identification_card();
             String name = CarInfo.getC_name();
             String phone = CarInfo.getC_phone();
             String address= CarInfo.getC_address();
             String car_id = CarInfo.getC_car_id();
             String inspection_time = CarInfo.getC_Inspection_expirationTime();
-            String insurance_time = CarInfo.getC_Insurance_expirationTime();
+            //String insurance_time = CarInfo.getC_Insurance_expirationTime();
             String sql = " insert into t_info  (c_id, " +
                     " c_identification_card," +
                     " c_Inspection_expirationTime," +
@@ -194,9 +197,11 @@ public class DBHelper {
                     " c_phone," +
                     " c_car_id," +
                     " c_address )" +
-                    "values('"+id+"','"+identification_card+"','"+inspection_time+"','"+insurance_time+"','"+name+"','"+phone+"','"+car_id+"','"+address+"')";
+                    "values('"+id+"','"+identification_card+"','"+inspection_time+"','"+""+"','"+name+"','"+phone+"','"+car_id+"','"+address+"')";
             flag = jdbcUtils.updateByPreparedStatement(sql,null);
-        }
+
+            }
+            
         return flag;
     }
 

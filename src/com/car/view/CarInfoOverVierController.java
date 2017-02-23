@@ -74,7 +74,7 @@ public class CarInfoOverVierController {
 		}else{
 			boolean isdelOK = dbHelper.delCarInfo(info);
 			if(!isdelOK){
-				logger.error("del fail ��id��"+info.getC_id());
+				logger.error("del fail id:"+info.getC_id());
 				FxDialogs.showError("Delete Error", "删除失败");
 			}else{
 				carTable.getItems().remove(info);
@@ -82,5 +82,32 @@ public class CarInfoOverVierController {
 			}	
 		}
 		
+	}
+	
+	
+	@FXML
+	private void handleNewCarInfo() throws Exception {
+	    CarInfo tempCar = new CarInfo();
+	    boolean okClicked = Main.showCarInfoEditDialog(tempCar,"添加人员");
+	    if (okClicked) {
+	    	dbHelper.addCarInfo(tempCar);
+	    	Main.getCarInfosData().add(tempCar);
+	    }
+	}
+
+	
+	@FXML
+	private void handleEditPerson() throws Exception {
+	    CarInfo selectedCar = carTable.getSelectionModel().getSelectedItem();
+	    if (selectedCar != null) {
+	        boolean okClicked = Main.showCarInfoEditDialog(selectedCar,"修改人员");
+	        if (okClicked) {
+	        	dbHelper.updateCarInfo(selectedCar); 
+	        }
+
+	    } else {
+	        // Nothing selected.
+	    	FxDialogs.showError("Error", "No car selected");
+	    }
 	}
 }

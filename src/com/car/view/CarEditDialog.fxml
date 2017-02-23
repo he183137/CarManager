@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="450.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="450.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.car.view.CarInfoEditDialogController">
    <children>
       <TitledPane animated="false" prefHeight="450.0" prefWidth="446.0" text="用户操作" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
         <content>
@@ -76,18 +76,18 @@
                               <Insets left="25.0" />
                            </padding>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" />
-                        <TextField prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <DatePicker prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="c_nameField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="c_identification_cardField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="c_phoneField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="c_caridField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextArea fx:id="c_addressField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="c_Inspection_expirationTimePicker" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <HBox alignment="CENTER_RIGHT" layoutX="166.0" layoutY="376.0" prefHeight="36.0" prefWidth="212.0" spacing="20.0">
                      <children>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #33FFAA;; -fx-border-color: #888888;" text="确认" />
-                        <Button mnemonicParsing="false" style="-fx-border-color: #888888;;" text="取消" />
+                        <Button mnemonicParsing="false" onAction="#handleOk" style="-fx-background-color: #33FFAA;; -fx-border-color: #888888;" text="确认" />
+                        <Button mnemonicParsing="false" onAction="#handleCancel" style="-fx-border-color: #888888;;" text="取消" />
                      </children>
                      <opaqueInsets>
                         <Insets />

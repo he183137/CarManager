@@ -1,12 +1,13 @@
 package com.car.util;
 
-import org.apache.log4j.Logger;
-
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
+
+import org.apache.log4j.Logger;
+
 
 /**
  * Created by h on 2017/2/12.
@@ -27,7 +28,7 @@ public class TimeUtil {
 	 */
 	public static boolean isExpired(int countDown, String expiredTime) throws Exception {
 		  boolean isExpired = false;
-	        SimpleDateFormat sdf =   new SimpleDateFormat( "yyyy-MM-dd" );
+	        SimpleDateFormat sdf =   new SimpleDateFormat(time_fomat_str);
 	        Date expiredDate= sdf.parse(expiredTime);
 	        Date currentDate =  sdf.parse(sdf.format(new Date()));
 	        long expired = expiredDate.getTime();
@@ -62,4 +63,6 @@ public class TimeUtil {
 		return localDate.format(format);
 
 	}
+
+
 }
