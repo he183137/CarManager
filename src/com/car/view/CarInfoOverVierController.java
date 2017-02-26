@@ -55,7 +55,29 @@ public class CarInfoOverVierController {
     @FXML
     private TextField testPhoneNoField;
     
+ 
+    @FXML
+    private TextField countdonwField;
     
+    
+    @FXML
+	private TableView<CarInfo> carTable2;
+
+	@FXML
+	private TableColumn<CarInfo, String> c_id2;
+
+	@FXML
+	private TableColumn<CarInfo, String> c_name2;
+	@FXML
+	private TableColumn<CarInfo, String> c_identification_card2;
+	@FXML
+	private TableColumn<CarInfo, String> c_address2;
+	@FXML
+	private TableColumn<CarInfo, String> c_phone2;
+	@FXML
+	private TableColumn<CarInfo, String> c_car_id2;
+	@FXML
+	private TableColumn<CarInfo, String> c_Inspection_expirationTime2;
 	
 	private Main Main;
 	
@@ -192,4 +214,9 @@ public class CarInfoOverVierController {
 		}
 	}
 	
+	
+	@FXML
+	private void handlerCheckDate() throws Exception{
+		
+	}
 }

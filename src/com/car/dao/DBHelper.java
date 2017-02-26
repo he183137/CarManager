@@ -304,6 +304,15 @@ public class DBHelper {
          }
     }
     
+    public void updateMsgConf(SendConfPojo sendConfPojo)throws Exception{
+        if(sendConfPojo!=null){
+           int countdown = sendConfPojo.getCountDown();
+          String msgTemplete = sendConfPojo.getMsgTemplete();
+          	 updateConf("countDown",countdown);
+          	 updateConf("msgTemplete",msgTemplete);
+          	
+       }
+  }
     
     private void updateConf(String key ,String value) throws Exception{
 
@@ -316,6 +325,19 @@ public class DBHelper {
     	   }
        }
     }
+    
+    
+    private void updateConf(String key ,int value) throws Exception{
+
+        List <Object> list =  this.getParmList(value,key);
+        if(!list.isEmpty()&& list.size()==2){
+     	   String sql = "UPDATE t_conf set c_value = ? where c_key = ?"; 
+     	   boolean flag = jdbcUtils.updateByPreparedStatement(sql,list);
+     	   if(!flag){
+     		   throw new Exception("update Conf fail ,key: "+key+" value: "+value);
+     	   }
+        }
+     }
     
     /**
      * 生成参数
