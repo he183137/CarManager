@@ -10,7 +10,9 @@ import org.apache.log4j.Logger;
 
 import com.car.pojo.CarInfo;
 import com.car.pojo.Confpojo;
+import com.car.pojo.SendConfPojo;
 import com.car.util.JdbcUtils;
+
 
 /**
  * Created by h on 2017/2/12.
@@ -206,7 +208,7 @@ public class DBHelper {
     }
 
     /***
-     * 鑾峰彇閰嶇疆琛ㄤ俊鎭�
+     * 配置pojo
      * @return
      * @throws Exception
      */
@@ -221,12 +223,6 @@ public class DBHelper {
                 String c_key = (String) result_map.get("c_key");
                 String c_value = (String) result_map.get("c_value");
                 switch (c_key){
-                    case "countDown":
-                        confpojo.setCountDown(Integer.parseInt(c_value));
-                        break;
-                    case "msgTemplete":
-                        confpojo.setMsgTemplete(c_value);
-                        break;
                     case "port":
                         confpojo.setPort(c_value);
                         break;
@@ -255,27 +251,94 @@ public class DBHelper {
         return  null;
     }
     
+  
+    
+    /***
+     * 短信pojo
+     * @return
+     * @throws Exception
+     */
+    public SendConfPojo getMsgConf() throws Exception{
+        String sql = "select c_key,c_value from t_conf ";
+        List<Map<String, Object>> conf_list =  jdbcUtils.findModeResult(sql,null);
+        if(conf_list!=null && !conf_list.isEmpty()){
+           Iterator <Map<String,Object> > iterator = conf_list.iterator();
+           SendConfPojo SendConfPojo = new SendConfPojo();
+            while(iterator.hasNext()){
+                Map<String,Object> result_map = iterator.next();
+                String c_key = (String) result_map.get("c_key");
+                String c_value = (String) result_map.get("c_value");
+                switch (c_key){
+                    case "countDown":
+                    	SendConfPojo.setCountDown(Integer.parseInt(c_value));
+                        break;
+                    case "msgTemplete":
+                    	SendConfPojo.setMsgTemplete(c_value);
+                        break;
+                 
+                    default:
+                        break;
+                }
+
+            }
+            return SendConfPojo;
+        }
+        return  null;
+    }
+    
+    
+    public void updateConf(Confpojo confpojo)throws Exception{
+          if(confpojo!=null){
+             String port = confpojo.getPort();
+             String baudrate= confpojo.getBaudRate();
+             String manufacturer =  confpojo.getManufacturer();
+             String model = confpojo.getModel();
+             String pincode = confpojo.getPinCode();
+             String testphoneNo = confpojo.getTestPhoneNo() ==null? "":confpojo.getTestPhoneNo();
+            	 updateConf("port",port);
+            	 updateConf("baudRate",baudrate);
+            	 updateConf("manufacturer",manufacturer);
+            	 updateConf("model",model);
+                 updateConf("pinCode",pincode);
+                 updateConf("testPhoneNo",testphoneNo); 
+         }
+    }
+    
+    
+    private void updateConf(String key ,String value) throws Exception{
+
+       List <Object> list =  this.getParmList(value,key);
+       if(!list.isEmpty()&& list.size()==2){
+    	   String sql = "UPDATE t_conf set c_value = ? where c_key = ?"; 
+    	   boolean flag = jdbcUtils.updateByPreparedStatement(sql,list);
+    	   if(!flag){
+    		   throw new Exception("update Conf fail ,key: "+key+" value: "+value);
+    	   }
+       }
+    }
+    
+    /**
+     * 生成参数
+     * @param parmn
+     * @return
+     */
+    private  List<Object> getParmList(Object ...parmn){
+    	List <Object> parm_list = new ArrayList<>();
+    	for(Object parm: parmn){
+    		parm_list.add(parm);
+    	}
+    	
+    	return parm_list;
+    }
+    
     public void closeConn(){
     	jdbcUtils.releaseConn();
     }
 //    public static void main(String[] args) throws Exception {
-//    	System.out.println(UUID.randomUUID().toString());
-////        DBHelper dbHelper = new DBHelper();
-////        CarInfo CarInfo = new CarInfo();
-////        CarInfo.setC_id("c26170d2-381b-4de2-b297-d48fd4d0b4b8");
-////        System.out.println( dbHelper.delCarInfo(CarInfo));
-////        Confpojo confpojo = dbHelper.getConf();
-////        System.out.println(confpojo.getCountDown());
-////        CarInfo CarInfo = new CarInfo();
-////        CarInfo.setC_id(UUID.randomUUID().toString());
-////        CarInfo.setC_car_id("");
-////        CarInfo.setC_address("");
-////        CarInfo.setC_identification_card("");
-////        CarInfo.setC_Inspection_expirationTime("");
-////        CarInfo.setC_Insurance_expirationTime("");
-////        CarInfo.setC_name("");
-////        CarInfo.setC_phone("");
-//
-//
-//    }
+//    	List<Object> list = DBHelper.getParmList("1","3","3","4");
+//    	for(Object s:list){
+//    		System.out.println(s.toString());
+//    	}
+    	
 }
+

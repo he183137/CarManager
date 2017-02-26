@@ -1,82 +1,98 @@
 package com.car.pojo;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  * 
  * Created by h on 2017/2/12.
  */
 public class Confpojo {
 
-    private int countDown;
-    private String msgTemplete;
-    private String port;
-    private String baudRate;
-    private String pinCode;
-    private String manufacturer;
-    private String model;
-    private String testPhoneNo;
+//    private int countDown;
+//    private StringProperty msgTemplete;
+    private StringProperty port;
+    private StringProperty baudRate;
+    private StringProperty pinCode;
+    private StringProperty manufacturer;
+    private StringProperty model;
+    private StringProperty testPhoneNo;
 
-    public int getCountDown() {
-        return countDown;
-    }
-
-    public void setCountDown(int countDown) {
-        this.countDown = countDown;
-    }
-
-    public String getMsgTemplete() {
-        return msgTemplete;
-    }
-
-    public void setMsgTemplete(String msgTemplete) {
-        this.msgTemplete = msgTemplete;
-    }
+    
+	public Confpojo() {
+		this.port = new SimpleStringProperty();
+		this.baudRate = new SimpleStringProperty();
+		this.pinCode = new SimpleStringProperty();
+		this.manufacturer = new SimpleStringProperty();
+		this.model = new SimpleStringProperty();
+		this.testPhoneNo = new SimpleStringProperty();
+	
+	}
 
 
     public String getPort() {
-        return port;
+        return port.get();
     }
 
     public void setPort(String port) {
-        this.port = port;
+        this.port.set(port);
     }
 
+    public StringProperty getPortProperty(){
+    	return this.port;
+    } 
     public String getBaudRate() {
-        return baudRate;
+        return baudRate.get();
+    }
+    
+    public StringProperty getBaudRateProperty(){
+    	return this.baudRate;
     }
 
     public void setBaudRate(String baudRate) {
-        this.baudRate = baudRate;
+        this.baudRate.set( baudRate);
     }
 
     public String getPinCode() {
-        return pinCode;
+        return pinCode.get();
     }
 
     public void setPinCode(String pinCode) {
-        this.pinCode = pinCode;
+        this.pinCode.set(pinCode);
     }
 
+    public StringProperty getPinCodeProperty(){
+    	return this.pinCode;
+    }
     public String getManufacturer() {
-        return manufacturer;
+        return manufacturer.get();
     }
 
     public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
+        this.manufacturer.set(manufacturer);
     }
 
+    public StringProperty getManufacturerProperty(){
+    	return this.manufacturer;
+    }
     public String getModel() {
-        return model;
+        return model.get();
     }
 
     public void setModel(String model) {
-        this.model = model;
+        this.model.set(model);
     }
-
+    public StringProperty getModelProperty(){
+    	return this.model;
+    }
     public String getTestPhoneNo() {
-        return testPhoneNo;
+        return testPhoneNo.get();
     }
 
     public void setTestPhoneNo(String testPhoneNo) {
-        this.testPhoneNo = testPhoneNo;
+        this.testPhoneNo.set(testPhoneNo);
+    }
+    public StringProperty getTestPhoneNoProperty(){
+    	return this.testPhoneNo;
     }
 }

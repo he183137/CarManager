@@ -5,10 +5,13 @@ import org.apache.log4j.Logger;
 import com.car.dao.DBHelper;
 import com.car.main.Main;
 import com.car.pojo.CarInfo;
+import com.car.pojo.Confpojo;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class CarInfoOverVierController {
 	@FXML
@@ -31,11 +34,40 @@ public class CarInfoOverVierController {
 	private TableColumn<CarInfo, String> c_Inspection_expirationTime;
 //	@FXML
 //	private TableColumn<CarInfo, String> c_Insurance_expirationTime;
-
+    
+    @FXML 
+	private  TextField portField;
+    
+    @FXML
+    private TextField baudRateField;
+    
+    @FXML
+    private TextField pinCodeField;
+    
+    @FXML 
+    private TextField manufacturerField;
+    
+    @FXML
+    private TextField modelField;
+    
+    @FXML
+    private TextField testPhoneNoField;
+    
+    
+    @FXML
+    
+    private Button testSMS;
+    
+    @FXML
+    
+    private Button SMSOK;
+	
 	private Main Main;
 	
+	private Confpojo confpojo;
 	private static Logger logger = Logger.getLogger(CarInfoOverVierController.class);
 	private DBHelper dbHelper;
+	
 	public void setMain(Main main) {
 		this.Main = main;
 		carTable.setItems(main.getCarInfosData());
@@ -50,7 +82,7 @@ public class CarInfoOverVierController {
 	}
 
 	@FXML
-	private void initialize() {
+	private void initialize() throws Exception {
 		dbHelper = DBHelper.getInstance();
 		c_id.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
 		c_name.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
@@ -63,6 +95,7 @@ public class CarInfoOverVierController {
 		// c_Insurance_expirationTime.setCellValueFactory(cellData->cellData.getValue().getC_Insurance_expirationTimeProperty());
 		carTable.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> getCarInfoById(newValue));
+		setConfPojo(dbHelper.getConf());
 	}
 
 	@FXML
@@ -83,6 +116,7 @@ public class CarInfoOverVierController {
 		}
 		
 	}
+	
 	
 	
 	@FXML
@@ -110,4 +144,37 @@ public class CarInfoOverVierController {
 	    	FxDialogs.showError("Error", "No car selected");
 	    }
 	}
+	
+	public void setConfPojo(Confpojo confpojo){
+		this.confpojo = confpojo;
+		if(confpojo !=null){
+			portField.setText(confpojo.getPort());
+			baudRateField.setText(confpojo.getBaudRate());
+			manufacturerField.setText(confpojo.getManufacturer());
+			modelField.setText(confpojo.getModel());
+			pinCodeField.setText(confpojo.getPinCode());
+			testPhoneNoField.setText(confpojo.getTestPhoneNo());
+			
+		}
+
+	}
+	
+	@FXML
+	private void handleOKConf() throws Exception{
+		confpojo.setPort(portField.getText());
+		confpojo.setBaudRate(baudRateField.getText());
+		confpojo.setManufacturer(manufacturerField.getText());
+		confpojo.setModel(modelField.getText());
+		confpojo.setPinCode(pinCodeField.getText());
+		confpojo.setTestPhoneNo(testPhoneNoField.getText());
+		try{
+			dbHelper.updateConf(confpojo);
+			FxDialogs.showInformation("INFO", "设置成功");
+		}catch (Exception e) {
+			// TODO: handle exception
+			FxDialogs.showError("ERROR", e.getMessage());
+		}
+		
+	}
+	
 }
