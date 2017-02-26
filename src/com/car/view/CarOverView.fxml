@@ -107,7 +107,7 @@
                      <bottom>
                         <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button fx:id="testSMS" mnemonicParsing="false" style="-fx-border-color: #696969;" text="测试">
+                              <Button fx:id="testSMS" mnemonicParsing="false" onAction="#handlerTestConf" style="-fx-border-color: #696969;" text="测试">
                                  <HBox.margin>
                                     <Insets bottom="20.0" />
                                  </HBox.margin>

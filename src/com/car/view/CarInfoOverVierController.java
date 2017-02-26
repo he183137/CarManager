@@ -6,6 +6,8 @@ import com.car.dao.DBHelper;
 import com.car.main.Main;
 import com.car.pojo.CarInfo;
 import com.car.pojo.Confpojo;
+import com.car.util.SendSmsUtil;
+import com.sun.xml.internal.ws.api.pipe.ThrowableContainerPropertySet;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -54,13 +56,6 @@ public class CarInfoOverVierController {
     private TextField testPhoneNoField;
     
     
-    @FXML
-    
-    private Button testSMS;
-    
-    @FXML
-    
-    private Button SMSOK;
 	
 	private Main Main;
 	
@@ -175,6 +170,26 @@ public class CarInfoOverVierController {
 			FxDialogs.showError("ERROR", e.getMessage());
 		}
 		
+	}
+	
+	@FXML
+	private void handlerTestConf() throws Exception{
+		String testPhoneNo = confpojo.getTestPhoneNo();
+		String testPhoneF = testPhoneNoField.getText();
+		if(testPhoneF!=null && !"".equals(testPhoneF)){	
+			if(testPhoneNo!=null && !"".equals(testPhoneNo)){
+				boolean flag = SendSmsUtil.sendSms();
+				if(!flag){
+					FxDialogs.showError("ERROR", "测试失败");
+				}else{
+					FxDialogs.showInformation("INFO", "测试成功");
+				}	
+			}else{
+				FxDialogs.showError("ERROR", "测试电话异常：error1"); //error1:数据库该值为空
+			}
+		}else{
+			FxDialogs.showError("ERROR", "测试电话不能为空");
+		}
 	}
 	
 }
