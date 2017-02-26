@@ -356,11 +356,9 @@ public class DBHelper {
     public void closeConn(){
     	jdbcUtils.releaseConn();
     }
-//    public static void main(String[] args) throws Exception {
-//    	List<Object> list = DBHelper.getParmList("1","3","3","4");
-//    	for(Object s:list){
-//    		System.out.println(s.toString());
-//    	}
-    	
+    public static void main(String[] args) throws Exception {
+    	SendConfPojo confPojo = DBHelper.getInstance().getMsgConf();
+    	System.out.println(confPojo.getCountDown());
+    }
 }
 

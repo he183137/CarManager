@@ -26,6 +26,21 @@
                <center>
                   <TextArea fx:id="MsgTempleteFiled" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                </center>
+               <top>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="时间间隔">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField />
+                     </children>
+                  </HBox>
+               </top>
+               <left>
+                  <Label prefHeight="15.0" prefWidth="67.0" text="模板" BorderPane.alignment="CENTER" />
+               </left>
             </BorderPane>
          </children></AnchorPane>
   </content>

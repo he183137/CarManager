@@ -1,19 +1,28 @@
 package com.car.view;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.car.dao.DBHelper;
 import com.car.main.Main;
 import com.car.pojo.CarInfo;
 import com.car.pojo.Confpojo;
+import com.car.pojo.SendConfPojo;
 import com.car.util.SendSmsUtil;
+import com.car.util.TimeUtil;
 import com.sun.xml.internal.ws.api.pipe.ThrowableContainerPropertySet;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 
 public class CarInfoOverVierController {
 	@FXML
@@ -79,8 +88,12 @@ public class CarInfoOverVierController {
 	@FXML
 	private TableColumn<CarInfo, String> c_Inspection_expirationTime2;
 	
-	private Main Main;
 	
+	private ObservableList<CarInfo> expriedCarList = FXCollections.observableArrayList();
+	private Main Main;
+	private SendConfPojo sendConfPojo; 
+	
+
 	private Confpojo confpojo;
 	private static Logger logger = Logger.getLogger(CarInfoOverVierController.class);
 	private DBHelper dbHelper;
@@ -89,7 +102,7 @@ public class CarInfoOverVierController {
 		this.Main = main;
 		carTable.setItems(main.getCarInfosData());
 	}
-
+	
 	public CarInfoOverVierController() {
 	}
 
@@ -113,6 +126,7 @@ public class CarInfoOverVierController {
 		carTable.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> getCarInfoById(newValue));
 		setConfPojo(dbHelper.getConf());
+		setSendConfPojo(dbHelper.getMsgConf());
 	}
 
 	@FXML
@@ -176,6 +190,13 @@ public class CarInfoOverVierController {
 
 	}
 	
+	public void setSendConfPojo(SendConfPojo sendConfPojo) {
+		this.sendConfPojo = sendConfPojo;
+		if(sendConfPojo!=null){
+			countdonwField.setText(String.valueOf(sendConfPojo.getCountDown()));
+		}
+	}
+	
 	@FXML
 	private void handleOKConf() throws Exception{
 		confpojo.setPort(portField.getText());
@@ -215,8 +236,47 @@ public class CarInfoOverVierController {
 	}
 	
 	
+	private List<CarInfo> getExpireCar(List<CarInfo> allCarInfo){
+		if(allCarInfo==null ||allCarInfo.isEmpty())  {
+			return null;
+		}
+		List <CarInfo> expriedCarList = new ArrayList<>();
+		try{
+			
+			Iterator<CarInfo> iterable = allCarInfo.iterator();
+			while(iterable.hasNext()){
+				CarInfo carInfo = iterable.next();
+				String inspectionTime = carInfo.getC_Inspection_expirationTime();
+				boolean isExpired = TimeUtil.isExpired(sendConfPojo.getCountDown(), inspectionTime);
+				if(isExpired){
+					expriedCarList.add(carInfo);
+				}
+			}	
+		}catch (Exception e) {
+			// TODO: handle exception
+			FxDialogs.showError("ERROR", e.getMessage());
+		}
+		return expriedCarList;
+	}
+	
 	@FXML
 	private void handlerCheckDate() throws Exception{
-		
+		List<CarInfo> lists = getExpireCar(dbHelper.getAllCarInfo());
+		if(lists==null || lists.isEmpty()){
+			FxDialogs.showError("INFO", "无即将到期车辆");
+		}else{
+			expriedCarList.addAll(lists);
+			carTable2.setItems(expriedCarList);
+			c_id2.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
+			c_name2.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
+			c_identification_card2.setCellValueFactory(cellData -> cellData.getValue().getC_identification_cardProperty());
+			c_address2.setCellValueFactory(cellData -> cellData.getValue().getC_addressProperty());
+			c_phone2.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
+			c_car_id2.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
+			c_Inspection_expirationTime2
+					.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
+		}
 	}
+	
+	
 }

@@ -66,7 +66,7 @@
                                     <Insets bottom="18.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField>
+                              <TextField fx:id="countdonwField">
                                  <HBox.margin>
                                     <Insets bottom="15.0" right="15.0" />
                                  </HBox.margin>
@@ -76,7 +76,7 @@
                                     <Insets bottom="15.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" style="-fx-background-color: #90EE90;" text="检查">
+                              <Button mnemonicParsing="false" onAction="#handlerCheckDate" style="-fx-background-color: #90EE90;" text="检查">
                                  <HBox.margin>
                                     <Insets bottom="15.0" right="10.0" />
                                  </HBox.margin>
@@ -85,15 +85,15 @@
                         </HBox>
                      </top>
                      <center>
-                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="carTable2" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="ID" visible="false" />
-                            <TableColumn prefWidth="75.0" text="姓名" />
-                              <TableColumn prefWidth="75.0" text="身份证" />
-                              <TableColumn prefWidth="75.0" text="车牌号" />
-                              <TableColumn prefWidth="75.0" text="年检时间" />
-                              <TableColumn prefWidth="75.0" text="联系电话" />
-                              <TableColumn prefWidth="75.0" text="家庭住址" />
+                            <TableColumn fx:id="c_id2" prefWidth="75.0" text="ID" visible="false" />
+                            <TableColumn fx:id="c_name2" prefWidth="75.0" text="姓名" />
+                              <TableColumn fx:id="c_identification_card2" prefWidth="75.0" text="身份证" />
+                              <TableColumn fx:id="c_car_id2" prefWidth="75.0" text="车牌号" />
+                              <TableColumn fx:id="c_Inspection_expirationTime2" prefWidth="75.0" text="年检时间" />
+                              <TableColumn fx:id="c_phone2" prefWidth="75.0" text="联系电话" />
+                              <TableColumn fx:id="c_address2" prefWidth="75.0" text="家庭住址" />
                               <TableColumn prefWidth="75.0" text="发送状态" />
                           </columns>
                         </TableView>
