@@ -60,6 +60,8 @@ public class MsgDialogController {
 					// TODO Auto-generated catch block
 					FxDialogs.showError("ERROR", e.getMessage());
 				}
+			}else{
+				FxDialogs.showError("ERROR", "模板不能为空");
 			}	
 		}
 		

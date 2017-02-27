@@ -61,17 +61,17 @@
                      <top>
                         <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="BOTTOM_RIGHT">
                            <children>
-                              <Label text="间隔时间：">
+                              <Label text="提前提醒时间：">
                                  <HBox.margin>
                                     <Insets bottom="18.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="countdonwField">
+                              <TextField fx:id="countdonwField" onInputMethodTextChanged="#saveCountDown">
                                  <HBox.margin>
                                     <Insets bottom="15.0" right="15.0" />
                                  </HBox.margin>
                               </TextField>
-                              <Button mnemonicParsing="false" style="-fx-background-color: #00BFFF;" text="模板设置">
+                              <Button mnemonicParsing="false" onAction="#handleEditMsgTemplete" style="-fx-background-color: #00BFFF;" text="模板设置">
                                  <HBox.margin>
                                     <Insets bottom="15.0" />
                                  </HBox.margin>

@@ -15,6 +15,8 @@ import com.car.util.SendSmsUtil;
 import com.car.util.TimeUtil;
 import com.sun.xml.internal.ws.api.pipe.ThrowableContainerPropertySet;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -111,6 +113,7 @@ public class CarInfoOverVierController {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@FXML
 	private void initialize() throws Exception {
 		dbHelper = DBHelper.getInstance();
@@ -123,8 +126,22 @@ public class CarInfoOverVierController {
 		c_Inspection_expirationTime
 				.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
 		// c_Insurance_expirationTime.setCellValueFactory(cellData->cellData.getValue().getC_Insurance_expirationTimeProperty());
-		carTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValue) -> getCarInfoById(newValue));
+//		carTable.getSelectionModel().selectedItemProperty()
+//				.addListener((observable, oldValue, newValue) -> getCarInfoById(newValue));
+		countdonwField.textProperty().addListener(new ChangeListener() {
+
+			 public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+
+				 try {
+					saveCountDown();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+
+			});
 		setConfPojo(dbHelper.getConf());
 		setSendConfPojo(dbHelper.getMsgConf());
 	}
@@ -265,8 +282,11 @@ public class CarInfoOverVierController {
 		if(lists==null || lists.isEmpty()){
 			FxDialogs.showError("INFO", "无即将到期车辆");
 		}else{
+			if(!carTable2.getItems().isEmpty()){//清空上次查询记录
+				expriedCarList.clear();
+			}
 			expriedCarList.addAll(lists);
-			carTable2.setItems(expriedCarList);
+			carTable2.setItems(expriedCarList);	
 			c_id2.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
 			c_name2.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
 			c_identification_card2.setCellValueFactory(cellData -> cellData.getValue().getC_identification_cardProperty());
@@ -278,5 +298,25 @@ public class CarInfoOverVierController {
 		}
 	}
 	
+	@FXML
+	private void saveCountDown()throws Exception{
+		String countdown = countdonwField.getText();
+		try{
+			sendConfPojo.setCountDown(Integer.parseInt(countdown));	
+			logger.debug("countDown: "+countdown);
+			dbHelper.updateMsgConf(sendConfPojo);
+		}catch (NumberFormatException e) {
+			// TODO: handle exception
+			logger.error("input: "+countdown);
+		}
+	}
 	
+	
+	@FXML
+	private void handleEditMsgTemplete() throws Exception{
+		 boolean okClicked = Main.showMsgEditDialog(this.sendConfPojo);
+		 if (okClicked) {
+	        	dbHelper.updateMsgConf(this.sendConfPojo);
+	    }
+	}
 }
