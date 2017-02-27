@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.car.dao.DBHelper;
+import com.car.helper.DBHelper;
 import com.car.main.Main;
 import com.car.pojo.CarInfo;
 import com.car.pojo.Confpojo;

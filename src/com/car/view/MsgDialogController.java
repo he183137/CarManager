@@ -2,7 +2,7 @@ package com.car.view;
 
 import org.apache.log4j.Logger;
 
-import com.car.dao.DBHelper;
+import com.car.helper.DBHelper;
 import com.car.pojo.SendConfPojo;
 
 

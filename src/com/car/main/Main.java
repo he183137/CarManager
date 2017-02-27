@@ -3,7 +3,7 @@ package com.car.main;
 import java.io.IOException;
 import java.util.List;
 
-import com.car.dao.DBHelper;
+import com.car.helper.DBHelper;
 import com.car.pojo.CarInfo;
 import com.car.pojo.SendConfPojo;
 import com.car.view.CarInfoEditDialogController;
