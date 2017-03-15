@@ -1,5 +1,6 @@
 package com.car.helper;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -36,7 +37,7 @@ public class DBHelper {
         jdbcUtils.getConnection();
     }
     /**
-     * 鏌ヨ鍏ㄩ儴淇℃伅
+     * 获取所有车辆
      *
      * @return
      * @throws Exception
@@ -73,10 +74,10 @@ public class DBHelper {
     }
 
     /**
-     * 鏌ヨ鍗曚釜鐢ㄦ埛淇℃伅
+     * 根据id获取车辆
      *
      * @param id
-     * @return 鐢ㄦ埛pojo
+     * @return 
      * @throws Exception
      */
     public CarInfo getCarInfoByOne(String id) throws Exception {
@@ -116,7 +117,7 @@ public class DBHelper {
     }
 
     /**
-     * 鎵归噺鍒犻櫎鐢ㄦ埛
+     * 删除
      * @param cars
      * @throws Exception
      */
@@ -131,7 +132,7 @@ public class DBHelper {
      }
 
     /**
-     * 鎵归噺淇敼鐢ㄦ埛淇℃伅
+     * 批量修改
      * @param cars
      * @throws Exception
      */
@@ -145,7 +146,7 @@ public class DBHelper {
         }
     }
     /**
-     * 淇敼鐢ㄦ埛淇℃伅
+     * 修改车辆信息
      */
     public boolean updateCarInfo(CarInfo CarInfo) throws Exception{
         boolean flag = false;
@@ -175,7 +176,7 @@ public class DBHelper {
         return  flag;
     }
     /***
-     * 娣诲姞鐢ㄦ埛
+     *添加车辆信息
      */
     public boolean addCarInfo(CarInfo CarInfo) throws Exception{
         boolean flag = false;
@@ -313,6 +314,15 @@ public class DBHelper {
           	
        }
   }
+    
+    public List<Map<String, Object>> findModeResult(String sql, List<Object> params) throws SQLException {
+		return jdbcUtils.findModeResult(sql, params);
+	}
+    
+    public boolean updateByPreparedStatement(String sql, List<Object> params) throws SQLException {
+    	return jdbcUtils.updateByPreparedStatement(sql, params);
+	}
+    
     
     private void updateConf(String key ,String value) throws Exception{
 

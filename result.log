@@ -10,3 +10,49 @@
 [2017-02-19 22:18:57][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 969e7b75-09cd-4be2-b200-16d7ce22bc11
 [2017-02-19 22:19:20][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 969e7b75-09cd-4be2-b200-16d7ce22bc13
 [2017-02-19 22:19:21][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 969e7b75-09cd-4be2-b200-16d7ce22bc12
+[2017-02-23 21:38:22][com.car.dao.DBHelper-updateCarInfo]update user error. The sql :UPDATE t_info  SET c_identification_card = '432', c_Inspection_expirationTime = '', c_Insurance_expirationTime='', c_name = '3', c_phone='535', c_car_id='325', c_address='235' WHERE c_id = 'null'
+[2017-02-23 21:39:05][com.car.dao.DBHelper-updateCarInfo]update user error. The sql :UPDATE t_info  SET c_identification_card = '4324', c_Inspection_expirationTime = '', c_Insurance_expirationTime='', c_name = '3', c_phone='5354', c_car_id='3254', c_address='2354' WHERE c_id = 'null'
+[2017-02-23 21:42:26][com.car.dao.DBHelper-updateCarInfo]update user error. The sql :UPDATE t_info  SET c_identification_card = '14', c_Inspection_expirationTime = '', c_Insurance_expirationTime='', c_name = '21', c_phone='5', c_car_id='32523', c_address='5235' WHERE c_id = 'null'
+[2017-02-23 21:48:02][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 61f2ac43-c255-412a-bcbd-c873b014c6f1
+[2017-02-23 21:53:51][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id bf7d8aab-94a1-414a-b898-4da895d69706
+[2017-02-23 21:53:53][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 38101d9d-dd66-4c27-a67c-188e378e7b0a
+[2017-02-23 21:53:55][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 777f729f-f3d1-4d79-8bee-1b3ae03d85cc
+[2017-02-23 21:53:56][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 255dc32c-f733-448b-87b4-f72f14edda27
+[2017-02-23 22:21:44][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 8f1a47ed-a66d-49be-8125-0b94f8c611fd
+[2017-02-23 22:34:00][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id de843e68-af81-491d-a117-bcaf51c85e4d
+[2017-02-23 22:34:03][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 198e3e1a-cd49-4dd6-94c8-7f711dc08436
+[2017-02-23 22:34:04][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 67f813d9-b5a4-4e01-9829-cf319a056587
+[2017-02-23 22:35:56][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 612b95d3-6cb5-4174-811d-605c0bd4007f
+[2017-02-23 22:35:58][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 17a56bac-54f8-453f-a710-9ee0c47e9e49
+[2017-02-23 22:35:59][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 5d87a239-0634-4ae5-b2df-b0e5259e27cc
+[2017-02-23 22:36:00][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id b4c5cbc6-d08e-4f92-921d-7a83e9bccfcf
+[2017-02-23 22:36:01][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 3628b27f-db4d-441f-a57a-d89c0c290602
+[2017-02-23 22:36:02][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 0784dbb9-3bb6-445c-a82e-6fc8bade4b75
+[2017-02-23 22:38:52][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 865e24f3-250d-4aea-a785-f09f3e2b0a38
+[2017-02-23 22:38:54][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id c2976a72-0c62-49ec-a21a-f3d6a65ba9e2
+[2017-02-23 22:44:54][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 8a251ce8-759b-458b-af4d-ba0b52e8f456
+[2017-02-26 20:51:15][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 4f460c60-4216-4b97-a4ea-907a38beb1f4
+[2017-02-26 20:51:17][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 36054241-5191-449f-aa69-93c68c826a53
+[2017-02-26 20:51:18][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id e42808b2-c1f3-47dc-ac5b-0008d9a0f6d4
+[2017-02-27 21:16:45][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:47][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:47][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:47][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:48][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:50][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:50][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:51][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:51][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:51][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:52][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:52][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:52][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:52][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:52][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:53][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:53][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:53][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:56][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:57][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:58][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-02-27 21:16:59][com.car.view.CarInfoOverVierController-saveCountDown]input: 

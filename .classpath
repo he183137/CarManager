@@ -5,5 +5,13 @@
 	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.8.11.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jindisms-3.4.8.jar"/>
+	<classpathentry kind="lib" path="lib/RXTXcomm-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

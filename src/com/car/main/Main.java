@@ -6,6 +6,7 @@ import java.util.List;
 import com.car.helper.DBHelper;
 import com.car.pojo.CarInfo;
 import com.car.pojo.SendConfPojo;
+import com.car.service.SmsService;
 import com.car.view.CarInfoEditDialogController;
 import com.car.view.CarInfoOverVierController;
 import com.car.view.MsgDialogController;
@@ -42,6 +43,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		primaryStage.setTitle("车检管理系统");
+		//new SmsService().sendSms(smsPojo);
 		showMain();
 	}
 	
