@@ -16,7 +16,7 @@ public class SmsThread extends Thread{
 	@Override
 	public void run() {
 		SmsService smsService = new SmsService();
-		
+		smsService.init();
 		PriorityBlockingQueue<SendSMSPojo> t_smsQ = (PriorityBlockingQueue<SendSMSPojo>) 
 				smsService.getSmsQ();
 		
@@ -37,5 +37,9 @@ public class SmsThread extends Thread{
 				}
 			}
 		}
+	}
+	
+	public static void main(String[] args) {
+		new SmsThread().start();
 	}
 }
