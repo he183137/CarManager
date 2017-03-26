@@ -1,8 +1,12 @@
 package com.car.view;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 
 import org.apache.log4j.Logger;
 
@@ -11,20 +15,22 @@ import com.car.main.Main;
 import com.car.pojo.CarInfo;
 import com.car.pojo.Confpojo;
 import com.car.pojo.SendConfPojo;
+import com.car.pojo.SendSMSPojo;
+import com.car.service.SmsService;
+import com.car.service.SmsThread;
+import com.car.util.CommonUtil;
 import com.car.util.SendSmsUtil;
 import com.car.util.TimeUtil;
-import com.sun.xml.internal.ws.api.pipe.ThrowableContainerPropertySet;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 
 public class CarInfoOverVierController {
 	@FXML
@@ -311,6 +317,41 @@ public class CarInfoOverVierController {
 		}
 	}
 	
+	
+	@FXML
+	private void handlerSendSms () throws Exception{
+	
+		if(expriedCarList==null || expriedCarList.isEmpty()){
+			FxDialogs.showError("INFO", "无到期车辆短信发送");
+		}else{
+			SmsService sms = new SmsService();
+			Iterator<CarInfo> car_iter = expriedCarList.iterator();
+			while (car_iter.hasNext()) {
+				CarInfo carInfo = car_iter.next();
+				SendSMSPojo smsPojo = new SendSMSPojo();
+				smsPojo.setId(UUID.randomUUID().toString());
+				smsPojo.setInfoId(carInfo.getC_id().toString());
+				smsPojo.setPhone(carInfo.getC_phone());
+				smsPojo.setMessage(CommonUtil.parseMsgTemplete(carInfo, new SendConfPojo().getMsgTemplete()));
+				Date date  = new Date();
+				smsPojo.setSendDate(date);
+			    smsPojo.setCreateDate(new Date());
+			    Calendar calendar = Calendar.getInstance();
+			    SimpleDateFormat sFormat = new SimpleDateFormat("YYYY");
+			    calendar.setTime(date);
+			    smsPojo.setSendYear(sFormat.format(date));
+			    sms.sendSms(smsPojo);
+			}
+			Alert alert =null; 
+			FxDialogs.showInformation(alert,"短信状态", "短信发送中，请勿关闭");
+			SmsThread smsThread = new SmsThread();
+			smsThread.start();
+			while (!smsThread.getState().equals(Thread.State.TERMINATED)){}
+			FxDialogs.closeAlert(alert);
+			FxDialogs.showInformation("短信状态", "发送完毕");
+		}
+	
+	}
 	
 	@FXML
 	private void handleEditMsgTemplete() throws Exception{

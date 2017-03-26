@@ -4,6 +4,7 @@ package com.car.view;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
@@ -27,7 +28,26 @@ public class FxDialogs {
         alert.setContentText(message);
 
         alert.showAndWait();
+        
     }
+    
+   
+    public static void showInformation( Alert alert,String title, String message) {
+    	alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setTitle("Information");
+        alert.setHeaderText(title);
+        alert.setContentText(message);
+
+        alert.showAndWait();
+        
+    }
+    
+    public static void closeAlert(Alert alert){
+    	alert.close();
+    }
+    
+    
 
     public static void showWarning(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);

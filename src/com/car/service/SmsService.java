@@ -61,7 +61,7 @@ public class SmsService {
 			SendState state = smsPojo.getSendState()!=null?smsPojo.getSendState():SendState.wait;
 			
 			String sql = String.format("insert into t_send_state(c_id,c_phone,c_message,c_state,c_create_date,c_info_id,c_send_year) "
-					+ "values('%d','%s','%s','%s','%s','%d','%s')", 
+					+ "values('%s','%s','%s','%s','%s','%s','%s')", 
 					smsPojo.getId(), 
 					smsPojo.getPhone(),
 					smsPojo.getMessage(),
@@ -70,6 +70,7 @@ public class SmsService {
 					smsPojo.getInfoId(),
 					smsPojo.getSendYear()
 					);
+			S_LOGGER.info(sql);
 			DBHelper.getInstance().updateByPreparedStatement(sql, null);
 			smsQ.add(smsPojo);
 		} catch (Exception t_e) {
@@ -110,8 +111,9 @@ public class SmsService {
 			result = new ArrayList<SendSMSPojo>();
 			for (Map<String, Object> sendSMSPojo : modeResult) {
 				SendSMSPojo smsPojo = new SendSMSPojo();
-				smsPojo.setId((Integer) sendSMSPojo.get("c_id"));
-				smsPojo.setInfoId((Integer) sendSMSPojo.get("c_info_id"));
+//				smsPojo.setId((Integer) sendSMSPojo.get("c_id"));
+				smsPojo.setId(sendSMSPojo.get("c_id").toString());
+				smsPojo.setInfoId(sendSMSPojo.get("c_info_id").toString());
 				smsPojo.setPhone((String) sendSMSPojo.get("c_phone"));
 				smsPojo.setMessage((String) sendSMSPojo.get("c_message"));
 				smsPojo.setSendState(SendState.valueOf((String) sendSMSPojo.get("c_state")));
@@ -140,8 +142,8 @@ public class SmsService {
 	}
 	
 	
-	public void updateSmsState(int smsId,SendState sendState) throws SQLException{
-		String sql = String.format("update t_send_state set c_send_date='%s',c_state='%s' where c_id='%d'", 
+	public void updateSmsState(String smsId,SendState sendState) throws SQLException{
+		String sql = String.format("update t_send_state set c_send_date='%s',c_state='%s' where c_id='%s'", 
 				my_fmt.format(new Date()),
 				sendState.name(),
 				smsId);
@@ -149,7 +151,7 @@ public class SmsService {
 	}
 	
 	
-	
+	/*
 	public static void main(String[] args) throws Exception {
 		DBHelper.getInstance();
 		SmsService smsService = new SmsService();
@@ -202,7 +204,7 @@ public class SmsService {
 		for (SendSMSPojo sendSMSPojo : sendSMSPojoList) {
 			System.out.println(JSONObject.fromObject(sendSMSPojo).toString());
 		}
-	}
+	}*/
 	
 	
 }

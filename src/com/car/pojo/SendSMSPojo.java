@@ -26,7 +26,7 @@ public class SendSMSPojo implements java.lang.Comparable<SendSMSPojo>{
 	/**
 	 * <code>id</code> - {description}.
 	 */
-	private Integer id;
+	private String id;
 	
 	/**
 	 * <code>phone</code> - {description}.
@@ -56,7 +56,7 @@ public class SendSMSPojo implements java.lang.Comparable<SendSMSPojo>{
 	/**
 	 * <code>infoId</code> - 关联信息id.
 	 */
-	private Integer infoId;
+	private String infoId;
 	
 	
 	/**
@@ -73,12 +73,22 @@ public class SendSMSPojo implements java.lang.Comparable<SendSMSPojo>{
 	
 
 
-	public Integer getId() {
+	/*public Integer getId() {
 		return id;
 	}
 
 
 	public void setId(Integer id) {
+		this.id = id;
+	}*/
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -133,18 +143,28 @@ public class SendSMSPojo implements java.lang.Comparable<SendSMSPojo>{
 	}
 
 
-	public Integer getInfoId() {
-		return infoId;
-	}
-
-
-	public void setInfoId(Integer infoId) {
-		this.infoId = infoId;
-	}
+//	public Integer getInfoId() {
+//		return infoId;
+//	}
+//
+//
+//	public void setInfoId(Integer infoId) {
+//		this.infoId = infoId;
+//	}
 
 
 	public String getSendYear() {
 		return sendYear;
+	}
+
+
+	public String getInfoId() {
+		return infoId;
+	}
+
+
+	public void setInfoId(String infoId) {
+		this.infoId = infoId;
 	}
 
 

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="450.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.car.view.CarInfoEditDialogController">
+<AnchorPane prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.car.view.CarInfoEditDialogController">
    <children>
-      <TitledPane animated="false" prefHeight="450.0" prefWidth="446.0" text="用户操作" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+      <TitledPane animated="false" prefHeight="450.0" prefWidth="446.0" text="用户操作" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="444.0">
                <children>
@@ -77,12 +77,18 @@
                            </padding>
                         </Label>
                         <TextField fx:id="c_nameField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="c_identification_cardField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="c_identification_cardField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></TextField>
                         <TextField fx:id="c_phoneField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="c_caridField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextArea fx:id="c_addressField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <DatePicker fx:id="c_Inspection_expirationTimePicker" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
+                     <opaqueInsets>
+                        <Insets right="10.0" />
+                     </opaqueInsets>
                   </GridPane>
                   <HBox alignment="CENTER_RIGHT" layoutX="166.0" layoutY="376.0" prefHeight="36.0" prefWidth="212.0" spacing="20.0">
                      <children>
