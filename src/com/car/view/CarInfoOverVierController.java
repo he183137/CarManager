@@ -16,6 +16,7 @@ import com.car.pojo.CarInfo;
 import com.car.pojo.Confpojo;
 import com.car.pojo.SendConfPojo;
 import com.car.pojo.SendSMSPojo;
+
 import com.car.service.SmsService;
 
 import com.car.util.CommonUtil;
@@ -95,9 +96,10 @@ public class CarInfoOverVierController {
 	private TableColumn<CarInfo, String> c_car_id2;
 	@FXML
 	private TableColumn<CarInfo, String> c_Inspection_expirationTime2;
-	
+
 	
 	private ObservableList<CarInfo> expriedCarList = FXCollections.observableArrayList();
+	
 	private Main Main;
 	private SendConfPojo sendConfPojo; 
 	
@@ -301,6 +303,7 @@ public class CarInfoOverVierController {
 			c_car_id2.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
 			c_Inspection_expirationTime2
 					.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
+	
 		}
 	}
 	
@@ -332,7 +335,7 @@ public class CarInfoOverVierController {
 				smsPojo.setId(UUID.randomUUID().toString());
 				smsPojo.setInfoId(carInfo.getC_id().toString());
 				smsPojo.setPhone(carInfo.getC_phone());
-				smsPojo.setMessage(CommonUtil.parseMsgTemplete(carInfo, new SendConfPojo().getMsgTemplete()));
+				smsPojo.setMessage(CommonUtil.parseMsgTemplete(carInfo, this.sendConfPojo.getMsgTemplete()));
 				Date date  = new Date();
 				smsPojo.setSendDate(date);
 			    smsPojo.setCreateDate(new Date());
@@ -341,6 +344,7 @@ public class CarInfoOverVierController {
 			    calendar.setTime(date);
 			    smsPojo.setSendYear(sFormat.format(date));
 			    sms.sendSms(smsPojo);
+			   
 			}
 			
 			FxDialogs.showInformation("短信状态", "发送完毕");
