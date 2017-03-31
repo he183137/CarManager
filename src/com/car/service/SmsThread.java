@@ -23,6 +23,9 @@ public class SmsThread extends Thread{
 		while (!Thread.currentThread().isInterrupted()) {
 			SendSMSPojo sendSMSPojo = null;
 			try {
+				if (t_smsQ.isEmpty()){
+					S_LOGGER.error("队列空");
+				}
 				sendSMSPojo = t_smsQ.take();
 				S_LOGGER.error("Q.take sendRecordId = " + sendSMSPojo.getId() + " messageBody="+sendSMSPojo.getMessage());
 				smsService.updateSmsState(sendSMSPojo.getId(), SendState.sending);

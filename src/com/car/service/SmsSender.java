@@ -16,6 +16,7 @@ import cn.sendsms.OutboundMessage;
 import cn.sendsms.Service;
 import cn.sendsms.Service.ServiceStatus;
 import cn.sendsms.modem.SerialModemGateway;
+import net.sf.json.JSONObject;
 
 public class SmsSender {
 	
@@ -36,14 +37,7 @@ public class SmsSender {
 	                try {
 	                    initGateways();
 	                    S_SMS_SERVER.startService();
-	                    OutboundMessage outboundMessage = new OutboundMessage(smsPojo.getPhone(),smsPojo.getMessage());
-	                    outboundMessage.setEncoding(MessageEncodings.ENCUCS2);
-	                    Collection<AGateway> gateways = S_SMS_SERVER.getGateways();
-	                    for (AGateway aGateway : gateways) {
-	                    	aGateway.sendMessage(outboundMessage);
-	                    	smsService.updateSmsState(smsPojo.getId(), SendState.success);
-	                    	break;
-						}
+	                    
 	                } catch (Exception e) {
 	                	S_LOGGER.error("SMS Server Start Failure", e);
 	                	try {
@@ -51,8 +45,28 @@ public class SmsSender {
 						} catch (SQLException t_e) {
 							S_LOGGER.error("SMS Send Failure", e);
 						}
+	                	return;
 	                }
 	            }
+	            
+	            try {
+		            OutboundMessage outboundMessage = new OutboundMessage(smsPojo.getPhone(),smsPojo.getMessage());
+	                outboundMessage.setEncoding(MessageEncodings.ENCUCS2);
+	                Collection<AGateway> gateways = S_SMS_SERVER.getGateways();
+	                for (AGateway aGateway : gateways) {
+	                	aGateway.sendMessage(outboundMessage);
+	                	smsService.updateSmsState(smsPojo.getId(), SendState.success);
+	                	break;
+					}
+	            } catch (Exception e) {
+                	S_LOGGER.error("SMS Server Send Failure", e);
+                	try {
+						smsService.updateSmsState(smsPojo.getId(), SendState.failure);
+					} catch (SQLException t_e) {
+						S_LOGGER.error("SMS Send Failure", e);
+					}
+                }
+	            S_LOGGER.error("SMS Server Send success!\r\n    "+JSONObject.fromObject(smsPojo).toString());
 	            
 	        }
 	}

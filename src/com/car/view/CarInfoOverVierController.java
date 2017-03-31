@@ -342,12 +342,7 @@ public class CarInfoOverVierController {
 			    smsPojo.setSendYear(sFormat.format(date));
 			    sms.sendSms(smsPojo);
 			}
-			Alert alert =null; 
-			FxDialogs.showInformation(alert,"短信状态", "短信发送中，请勿关闭");
-			SmsThread smsThread = new SmsThread();
-			smsThread.start();
-			while (!smsThread.getState().equals(Thread.State.TERMINATED)){}
-			FxDialogs.closeAlert(alert);
+			
 			FxDialogs.showInformation("短信状态", "发送完毕");
 		}
 	

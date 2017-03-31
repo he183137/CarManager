@@ -43,7 +43,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		primaryStage.setTitle("车检管理系统");
-//		new SmsThread().start(); 
+		new SmsThread().start(); 
 		showMain();
 	}
 	
