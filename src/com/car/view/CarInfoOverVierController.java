@@ -18,7 +18,7 @@ import com.car.pojo.Confpojo;
 import com.car.pojo.SendConfPojo;
 import com.car.pojo.SendSMSPojo;
 import com.car.service.SmsService;
-import com.car.service.SmsThread;
+
 import com.car.util.CommonUtil;
 import com.car.util.SendSmsUtil;
 import com.car.util.TimeUtil;
@@ -28,11 +28,11 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import jdk.nashorn.internal.ir.CatchNode;
+
 
 public class CarInfoOverVierController {
 	@FXML
