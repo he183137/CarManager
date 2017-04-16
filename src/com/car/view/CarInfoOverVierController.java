@@ -297,8 +297,7 @@ public class CarInfoOverVierController {
 				expriedCarList.clear();
 			}
 			expriedCarList.addAll(lists);
-			initTableData(expriedCarList, carTable2);
-			carTable2.setItems(expriedCarList);	
+			initTableData2(expriedCarList, carTable2);
 //			c_id2.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
 //			c_name2.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
 //			c_annual_cycle2.setCellValueFactory(cellData -> cellData.getValue().getC_annual_cycleProperty());
@@ -416,6 +415,17 @@ public class CarInfoOverVierController {
 		c_phone.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
 		c_car_id.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
 		c_Inspection_expirationTime
+				.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
+	}
+	
+	private void initTableData2(ObservableList<CarInfo> list,TableView<CarInfo> table2 ){
+		table2.setItems(list);
+		c_id2.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
+		c_name2.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
+		c_annual_cycle2.setCellValueFactory(cellData -> cellData.getValue().getC_annual_cycleProperty());
+		c_phone2.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
+		c_car_id2.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
+		c_Inspection_expirationTime2
 				.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
 	}
 		
