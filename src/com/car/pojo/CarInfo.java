@@ -1,5 +1,7 @@
 package com.car.pojo;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -7,21 +9,22 @@ public class CarInfo {
 
 	private StringProperty c_id;
 	private StringProperty c_name;
-	private StringProperty c_identification_card;
-	private StringProperty c_address;
+	//private StringProperty c_identification_card;
+	//private StringProperty c_address;
+	private IntegerProperty c_annual_cycle;
 	private StringProperty c_phone;
 	private StringProperty c_car_id;
 	private StringProperty c_Inspection_expirationTime;
-	private StringProperty c_Insurance_expirationTime;
+//	private StringProperty c_Insurance_expirationTime;
 
 	public CarInfo() {
 		this.c_id = new SimpleStringProperty();
 		this.c_name = new SimpleStringProperty();
-		this.c_identification_card = new SimpleStringProperty();
-		this.c_address = new SimpleStringProperty();
+		/*this.c_identification_card = new SimpleStringProperty();
+		this.c_address = new SimpleStringProperty();*/
+		this.c_annual_cycle = new SimpleIntegerProperty();
 		this.c_phone = new SimpleStringProperty();
 		this.c_car_id = new SimpleStringProperty();
-		this.c_Inspection_expirationTime = new SimpleStringProperty();
 		this.c_Inspection_expirationTime = new SimpleStringProperty();
 	}
 
@@ -48,8 +51,20 @@ public class CarInfo {
 	public String getC_name() {
 		return c_name.get();
 	}
+	
+	public int getC_annual_cycle(){
+		return c_annual_cycle.get();
+	}
+	
+	public void setC_annual_cycle(int c_annual_cycle){
+		this.c_annual_cycle.set(c_annual_cycle);
+		
+	}
+	public IntegerProperty getC_annual_cycleProperty(){
+		return c_annual_cycle;
+	}
 
-	public StringProperty getC_identification_cardProperty() {
+	/*public StringProperty getC_identification_cardProperty() {
 		return c_identification_card;
 	}
 
@@ -71,7 +86,7 @@ public class CarInfo {
 
 	public String getC_address() {
 		return c_address.get();
-	}
+	}*/
 
 	public StringProperty getC_phoneProperty() {
 		return c_phone;
@@ -110,16 +125,16 @@ public class CarInfo {
 		return c_Inspection_expirationTime.get();
 	}
 
-	public StringProperty getC_Insurance_expirationTimeProperty() {
-		return c_Insurance_expirationTime;
-	}
-
-	public void setC_Insurance_expirationTime(String c_Insurance_expirationTime) {
-		this.c_Insurance_expirationTime.set(c_Insurance_expirationTime);
-	}
-
-	public String getC_Insurance_expirationTime() {
-		return c_Insurance_expirationTime.get();
-	}
+//	public StringProperty getC_Insurance_expirationTimeProperty() {
+//		return c_Insurance_expirationTime;
+//	}
+//
+//	public void setC_Insurance_expirationTime(String c_Insurance_expirationTime) {
+//		this.c_Insurance_expirationTime.set(c_Insurance_expirationTime);
+//	}
+//
+//	public String getC_Insurance_expirationTime() {
+//		return c_Insurance_expirationTime.get();
+//	}
 
 }

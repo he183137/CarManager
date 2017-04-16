@@ -56,3 +56,430 @@
 [2017-02-27 21:16:57][com.car.view.CarInfoOverVierController-saveCountDown]input: 
 [2017-02-27 21:16:58][com.car.view.CarInfoOverVierController-saveCountDown]input: 
 [2017-02-27 21:16:59][com.car.view.CarInfoOverVierController-saveCountDown]input: 
+[2017-04-01 15:48:56][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-01 15:48:56][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-01 15:48:56][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-01 15:48:56][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-01 15:48:56][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-01 15:48:56][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-01 15:48:56][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-01 15:48:56][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-01 15:48:56][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 15:26:43][com.car.main.Main-start]GUI OK
+[2017-04-15 15:26:43][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 15:26:43][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 15:26:43][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 15:26:43][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 15:26:43][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 15:26:43][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 15:26:43][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 15:26:43][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 15:26:43][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 15:29:11][com.car.main.Main-start]GUI OK
+[2017-04-15 15:29:11][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 15:29:11][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 15:29:11][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 15:29:11][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 15:29:11][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 15:29:11][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 15:29:11][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 15:29:11][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 15:29:11][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 15:31:07][com.car.main.Main-start]GUI OK
+[2017-04-15 15:31:07][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 15:31:07][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 15:31:07][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 15:31:07][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 15:31:07][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 15:31:07][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 15:31:07][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 15:31:07][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 15:31:07][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 15:31:38][com.car.view.CarInfoEditDialogController-handleOk]车检周期不正确
+[2017-04-15 15:33:17][com.car.main.Main-start]GUI OK
+[2017-04-15 15:33:17][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 15:33:18][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 15:33:18][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 15:33:18][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 15:33:18][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 15:33:18][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 15:33:18][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 15:33:18][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 15:33:18][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 15:36:27][com.car.main.Main-start]GUI OK
+[2017-04-15 15:36:27][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 15:36:27][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 15:36:27][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 15:36:27][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 15:36:27][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 15:36:27][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 15:36:27][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 15:36:27][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 15:36:27][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 15:36:55][com.car.view.CarInfoEditDialogController-handleOk]车检周期不正确
+[2017-04-15 15:39:14][com.car.main.Main-start]GUI OK
+[2017-04-15 15:39:14][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 15:39:14][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 15:39:14][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 15:39:14][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 15:39:14][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 15:39:14][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 15:39:14][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 15:39:14][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 15:39:14][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 15:39:26][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 81b7dba6-6d27-4530-a298-619756584fb0
+[2017-04-15 15:39:30][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 279c4d04-780b-49e1-94c5-114e607c881a
+[2017-04-15 17:08:39][com.car.main.Main-start]GUI OK
+[2017-04-15 17:08:39][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:08:39][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:08:39][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:08:39][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:08:39][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:08:39][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:08:39][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:08:39][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:08:39][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:09:07][com.car.main.Main-start]GUI OK
+[2017-04-15 17:09:07][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:09:07][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:09:07][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:09:07][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:09:07][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:09:07][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:09:07][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:09:07][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:09:07][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:13:05][com.car.main.Main-start]GUI OK
+[2017-04-15 17:13:05][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:13:06][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:13:06][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:13:06][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:13:06][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:13:06][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:13:06][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:13:06][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:13:06][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:14:14][com.car.main.Main-start]GUI OK
+[2017-04-15 17:14:14][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:14:14][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:14:14][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:14:14][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:14:14][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:14:14][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:14:14][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:14:14][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:14:14][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:17:44][com.car.main.Main-start]GUI OK
+[2017-04-15 17:17:44][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:17:44][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:17:44][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:17:44][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:17:44][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:17:44][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:17:44][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:17:44][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:17:44][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:18:40][com.car.main.Main-start]GUI OK
+[2017-04-15 17:18:40][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:18:40][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:18:40][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:18:40][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:18:40][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:18:40][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:18:40][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:18:40][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:18:40][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:32:52][com.car.main.Main-start]GUI OK
+[2017-04-15 17:32:52][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:32:52][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:32:52][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:32:52][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:32:52][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:32:52][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:32:52][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:32:52][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:32:52][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:33:46][com.car.main.Main-start]GUI OK
+[2017-04-15 17:33:46][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:33:47][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:33:47][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:33:47][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:33:47][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:33:47][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:33:47][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:33:47][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:33:47][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:35:07][com.car.main.Main-start]GUI OK
+[2017-04-15 17:35:07][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:35:07][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:35:07][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:35:07][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:35:07][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:35:07][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:35:07][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:35:07][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:35:07][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:37:47][com.car.main.Main-start]GUI OK
+[2017-04-15 17:37:47][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:37:48][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:37:48][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:37:48][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:37:48][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:37:48][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:37:48][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:37:48][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:37:48][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:38:17][com.car.main.Main-start]GUI OK
+[2017-04-15 17:38:17][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:38:18][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:38:18][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:38:18][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:38:18][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:38:18][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:38:18][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:38:18][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:38:18][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:51:32][com.car.main.Main-start]GUI OK
+[2017-04-15 17:51:32][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:51:32][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:51:32][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:51:32][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:51:32][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:51:32][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:51:32][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:51:32][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:51:32][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:56:20][com.car.main.Main-start]GUI OK
+[2017-04-15 17:56:20][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:56:20][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:56:20][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:56:20][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:56:20][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:56:20][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:56:20][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:56:20][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:56:20][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:56:30][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%?%'
+[2017-04-15 17:58:12][com.car.main.Main-start]GUI OK
+[2017-04-15 17:58:12][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:58:12][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:58:12][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:58:12][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:58:12][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:58:12][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:58:12][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:58:12][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:58:12][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:58:17][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于彬%'
+[2017-04-15 17:58:23][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于彬%'
+[2017-04-15 17:58:24][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于彬%'
+[2017-04-15 17:58:24][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于彬%'
+[2017-04-15 17:58:44][com.car.main.Main-start]GUI OK
+[2017-04-15 17:58:44][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 17:58:44][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 17:58:44][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 17:58:44][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 17:58:44][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 17:58:44][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 17:58:44][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 17:58:44][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 17:58:44][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 17:59:06][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'
+[2017-04-15 18:01:26][com.car.main.Main-start]GUI OK
+[2017-04-15 18:01:26][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 18:01:26][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 18:01:26][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 18:01:26][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 18:01:26][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 18:01:26][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 18:01:26][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 18:01:26][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 18:01:26][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 18:01:57][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'
+[2017-04-15 18:04:03][com.car.main.Main-start]GUI OK
+[2017-04-15 18:04:03][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 18:04:03][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 18:04:03][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 18:04:03][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 18:04:03][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 18:04:03][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 18:04:03][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 18:04:03][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 18:04:03][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 18:04:22][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'
+[2017-04-15 18:04:58][com.car.main.Main-start]GUI OK
+[2017-04-15 18:04:58][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 18:04:58][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 18:04:58][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 18:04:58][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 18:04:58][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 18:04:58][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 18:04:58][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 18:04:58][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 18:04:58][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 18:05:02][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'
+[2017-04-15 18:05:04][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'
+[2017-04-15 18:05:27][com.car.main.Main-start]GUI OK
+[2017-04-15 18:05:27][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 18:05:27][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 18:05:27][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 18:05:27][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 18:05:27][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 18:05:27][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 18:05:27][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 18:05:27][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 18:05:27][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 18:05:40][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'
+[2017-04-15 18:06:36][com.car.main.Main-start]GUI OK
+[2017-04-15 18:06:36][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-15 18:06:37][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-15 18:06:37][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-15 18:06:37][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-15 18:06:37][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-15 18:06:37][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-15 18:06:37][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-15 18:06:37][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-15 18:06:37][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-15 18:06:40][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'
+[2017-04-15 18:06:45][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%贺%'
+[2017-04-16 09:30:18][com.car.main.Main-start]GUI OK
+[2017-04-16 09:30:18][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-16 09:30:18][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-16 09:30:18][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-16 09:30:18][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-16 09:30:18][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-16 09:30:18][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-16 09:30:18][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-16 09:30:18][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-16 09:30:18][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-16 09:30:27][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%贺鹏%'
+[2017-04-16 09:30:35][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于彬%'
+[2017-04-16 09:31:08][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%y%'
+[2017-04-16 09:31:09][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%y%'
+[2017-04-16 09:32:42][com.car.main.Main-start]GUI OK
+[2017-04-16 09:32:42][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-16 09:32:42][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-16 09:32:42][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-16 09:32:42][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-16 09:32:42][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-16 09:32:42][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-16 09:32:42][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-16 09:32:42][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-16 09:32:42][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-16 09:32:46][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%y%'
+[2017-04-16 09:35:37][com.car.main.Main-start]GUI OK
+[2017-04-16 09:35:37][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-16 09:35:37][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-16 09:35:37][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-16 09:35:37][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-16 09:35:37][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-16 09:35:37][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-16 09:35:37][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-16 09:35:37][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-16 09:35:37][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-16 09:35:44][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%n%'
+[2017-04-16 09:36:02][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%u%'
+[2017-04-16 09:36:24][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%y%'
+[2017-04-16 09:36:58][com.car.main.Main-start]GUI OK
+[2017-04-16 09:36:58][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-16 09:36:58][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-16 09:36:58][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-16 09:36:58][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-16 09:36:58][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-16 09:36:58][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-16 09:36:59][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-16 09:36:59][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-16 09:36:59][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-16 09:38:19][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%00%'
+[2017-04-16 10:08:11][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 15712f74-e5f5-4a88-b6bc-56849df44bdd
+[2017-04-16 10:08:13][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 779af5cd-ba33-4716-92d7-c57ed98f2a51
+[2017-04-16 10:08:15][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 6344b54d-46c1-4acb-a0b9-d3c3d653b717
+[2017-04-16 10:08:16][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id 85087219-6ae8-4ef0-8039-623defcc30cf
+[2017-04-16 10:08:18][com.car.view.CarInfoOverVierController-handleDeleteCar]del is ok,id d74f7b98-ffc7-438b-92b6-93437e4e3a28
+[2017-04-16 10:14:24][com.car.main.Main-start]GUI OK
+[2017-04-16 10:14:24][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-16 10:14:24][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-16 10:14:24][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-16 10:14:24][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-16 10:14:24][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-16 10:14:24][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-16 10:14:24][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-16 10:14:24][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-16 10:14:24][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-16 10:21:08][com.car.main.Main-start]GUI OK
+[2017-04-16 10:21:08][com.car.service.SmsThread-run]Q.take sendRecordId = 6ab12a15-472e-4a82-ac80-a6b73b7c4f0f messageBody=null
+[2017-04-16 10:21:08][cn.sendsms.Service-listSystemInformation]SendSMS: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://sendsms.cn
+[2017-04-16 10:21:08][cn.sendsms.Service-listSystemInformation]Version: 3.4.8
+[2017-04-16 10:21:08][cn.sendsms.Service-listSystemInformation]JRE Version: 1.8.0_121
+[2017-04-16 10:21:08][cn.sendsms.Service-listSystemInformation]JRE Impl Version: 25.121-b13
+[2017-04-16 10:21:08][cn.sendsms.Service-listSystemInformation]O/S: Windows 10 / amd64 / 10.0
+[2017-04-16 10:21:08][cn.sendsms.modem.ModemGateway-testGateway]GTW: modem.COM1: Starting gateway 
+[2017-04-16 10:21:08][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Using polled serial port mode.
+[2017-04-16 10:21:08][cn.sendsms.modem.SerialModemDriver-connectPort]GTW: modem.COM1: Opening: COM1 @9600
+[2017-04-16 10:21:17][com.car.helper.DBHelper-getCarInfoByName]select c_id, t.c_annual_cycle,t.c_Inspection_expirationTime,t.c_name,t.c_phone,t.c_car_id from t_info t where c_name like '%于%'

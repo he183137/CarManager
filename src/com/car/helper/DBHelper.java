@@ -44,13 +44,11 @@ public class DBHelper {
      */
     public List<CarInfo> getAllCarInfo() throws Exception {
         String sql = "select c_id, " +
-                "c_identification_card," +
+                "c_annual_cycle," +
                 "c_Inspection_expirationTime," +
-                "c_Insurance_expirationTime," +
                 "c_name," +
                 "c_phone," +
-                "c_car_id," +
-                "c_address " +
+                "c_car_id" +
                 " from t_info ";
         List <Map<String,Object>> carInfo_result = jdbcUtils.findModeResult(sql, null);
         Iterator<Map<String,Object>> iterator = carInfo_result.iterator();
@@ -58,10 +56,10 @@ public class DBHelper {
         while(iterator.hasNext()){
         	Map<String, Object> map_res = iterator.next();
         	CarInfo carInfo = new CarInfo();
-        	carInfo.setC_address(map_res.get("c_address").toString());
+        	carInfo.setC_annual_cycle(Integer.parseInt(map_res.get("c_annual_cycle").toString()));
         	carInfo.setC_car_id(map_res.get("c_car_id").toString());
         	carInfo.setC_id(map_res.get("c_id").toString());
-        	carInfo.setC_identification_card(map_res.get("c_identification_card").toString());
+//        	carInfo.setC_identification_card(map_res.get("c_identification_card").toString());
         	carInfo.setC_Inspection_expirationTime(map_res.get("c_Inspection_expirationTime").toString());
 //        	carInfo.setC_Insurance_expirationTime(map_res.get("c_Insurance_expirationTime").toString());
         	carInfo.setC_name(map_res.get("c_name").toString());
@@ -84,18 +82,58 @@ public class DBHelper {
         List<Object> parm = new ArrayList<Object>();
         parm.add(id);
         String sql = "select c_id, " +
-                "t.c_identification_card," +
+                "t.c_annual_cycle," +
                 "t.c_Inspection_expirationTime," +
-                "t.c_Insurance_expirationTime," +
                 "t.c_name," +
                 "t.c_phone," +
-                "t.c_car_id," +
-                "t.c_address" +
+                "t.c_car_id," +   
                 " from t_info t " +
                 "where c_id = ?";
         CarInfo CarInfo =  jdbcUtils.findSimpleRefResult(sql, parm, CarInfo.class);
         jdbcUtils.releaseResultSet();
         return CarInfo;
+    }
+    
+    
+
+    /**
+     * 根据name获取车辆
+     *
+     * @param name
+     * @return 
+     * @throws Exception
+     */
+    public List<CarInfo> getCarInfoByName(String name) throws Exception {
+      
+        String sql = "select c_id, " +
+                "t.c_annual_cycle," +
+                "t.c_Inspection_expirationTime," +
+                "t.c_name," +
+                "t.c_phone," +
+                "t.c_car_id" +   
+                " from t_info t " +
+                "where c_name like '%"+name+"%'";
+        logger.info(sql);
+        List<Map<String, Object>> reslut_list =  jdbcUtils.findModeResult(sql, null);
+        if(reslut_list.isEmpty()){
+        	return null;
+        }
+        Iterator<Map<String,Object>> iterator = reslut_list.iterator();
+        List<CarInfo> carInfo_list = new ArrayList<>();
+        while(iterator.hasNext()){
+        	Map<String, Object> map_res = iterator.next();
+        	CarInfo carInfo = new CarInfo();
+        	carInfo.setC_annual_cycle(Integer.parseInt(map_res.get("c_annual_cycle").toString()));
+        	carInfo.setC_car_id(map_res.get("c_car_id").toString());
+        	carInfo.setC_id(map_res.get("c_id").toString());
+
+        	carInfo.setC_Inspection_expirationTime(map_res.get("c_Inspection_expirationTime").toString());
+        	carInfo.setC_name(map_res.get("c_name").toString());
+        	carInfo.setC_phone(map_res.get("c_phone").toString());
+        	carInfo_list.add(carInfo);
+        }
+        jdbcUtils.releaseResultSet();
+        return carInfo_list;
     }
 
     /**
@@ -152,21 +190,19 @@ public class DBHelper {
         boolean flag = false;
        if(CarInfo!=null){
            String id = CarInfo.getC_id();
-           String identification_card = CarInfo.getC_identification_card();
+           int annual_cycle = CarInfo.getC_annual_cycle();
            String name = CarInfo.getC_name();
            String phone = CarInfo.getC_phone();
-           String address= CarInfo.getC_address();
+//           String address= CarInfo.getC_address();
            String car_id = CarInfo.getC_car_id();
            String inspection_time = CarInfo.getC_Inspection_expirationTime();
            //String insurance_time = CarInfo.getC_Insurance_expirationTime();
            String sql = "UPDATE t_info " +
-                   " SET c_identification_card = '"+identification_card +"'," +
+                   " SET c_annual_cycle = '"+annual_cycle +"'," +
                    " c_Inspection_expirationTime = '"+inspection_time+"'," +
-                   " c_Insurance_expirationTime='"+""+"'," +
                    " c_name = '"+name+"'," +
                    " c_phone='"+phone+"'," +
-                   " c_car_id='"+car_id+"'," +
-                   " c_address='"+address+"'"+
+                   " c_car_id='"+car_id+"'" +
                    " WHERE c_id = '"+id+"'";
            flag = jdbcUtils.updateByPreparedStatement(sql,null);
            if (!flag){
@@ -185,22 +221,20 @@ public class DBHelper {
         		CarInfo.setC_id(UUID.randomUUID().toString());
         	}
             String id = CarInfo.getC_id();
-            String identification_card = CarInfo.getC_identification_card();
+            int annual_cycle = CarInfo.getC_annual_cycle();
             String name = CarInfo.getC_name();
             String phone = CarInfo.getC_phone();
-            String address= CarInfo.getC_address();
+//            String address= CarInfo.getC_address();
             String car_id = CarInfo.getC_car_id();
             String inspection_time = CarInfo.getC_Inspection_expirationTime();
             //String insurance_time = CarInfo.getC_Insurance_expirationTime();
             String sql = " insert into t_info  (c_id, " +
-                    " c_identification_card," +
-                    " c_Inspection_expirationTime," +
-                    " c_Insurance_expirationTime," +
+                    " c_annual_cycle," +
+                    " c_Inspection_expirationTime," +                
                     " c_name," +
                     " c_phone," +
-                    " c_car_id," +
-                    " c_address )" +
-                    "values('"+id+"','"+identification_card+"','"+inspection_time+"','"+""+"','"+name+"','"+phone+"','"+car_id+"','"+address+"')";
+                    " c_car_id )" +
+                    "values('"+id+"','"+annual_cycle+"','"+inspection_time+"','"+name+"','"+phone+"','"+car_id+"')";
             flag = jdbcUtils.updateByPreparedStatement(sql,null);
 
             }

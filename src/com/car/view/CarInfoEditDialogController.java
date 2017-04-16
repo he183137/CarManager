@@ -3,6 +3,8 @@ package com.car.view;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import org.apache.log4j.Logger;
+
 import com.car.helper.DBHelper;
 import com.car.pojo.CarInfo;
 import com.car.util.CommonUtil;
@@ -24,7 +26,7 @@ public class CarInfoEditDialogController {
 	@FXML
 	private TextField c_nameField;
 	@FXML
-	private TextField c_identification_cardField;
+	private TextField c_annualCycleField;
 	@FXML
 	private TextArea c_addressField;
 	@FXML
@@ -37,6 +39,7 @@ public class CarInfoEditDialogController {
 	private CarInfo carinfo;
 	private Stage dialogStage;
 	private boolean okClicked;
+	private static Logger logger = Logger.getLogger(CarInfoEditDialogController.class);
 	public boolean isOkClicked() {
 		return okClicked;
 	}
@@ -59,9 +62,16 @@ public class CarInfoEditDialogController {
     @FXML
     private void handleOk() throws Exception {
 //        if (isInputValid()) {
-        	carinfo.setC_address(c_addressField.getText());
+    	try{
+    		carinfo.setC_annual_cycle(Integer.parseInt(c_annualCycleField.getText()));
+    	}catch (NumberFormatException e) {
+			// TODO: handle exception
+    		FxDialogs.showError("ERROR", "车检周期应为数字");
+    		logger.error("车检周期不正确");
+		}
+        	
         	carinfo.setC_car_id(c_caridField.getText());
-        	carinfo.setC_identification_card(c_identification_cardField.getText());
+//        	carinfo.setC_identification_card(c_identification_cardField.getText());
         	carinfo.setC_name(c_nameField.getText());
         	carinfo.setC_phone(c_phoneField.getText());
         	c_Inspection_expirationTimePicker.setConverter(new StringConverter<LocalDate>() {
@@ -106,9 +116,9 @@ public class CarInfoEditDialogController {
 		this.carinfo = carInfo; 
 		if (carInfo != null) {
 				c_nameField.setText(carInfo.getC_name());
-				c_identification_cardField.setText(carInfo.getC_identification_card());
+				c_annualCycleField.setText(String.valueOf(carInfo.getC_annual_cycle()));
 				c_phoneField.setText(carInfo.getC_phone());
-				c_addressField.setText(carInfo.getC_address());
+//				c_addressField.setText(carInfo.getC_address());
 				c_caridField.setText(carInfo.getC_car_id());
 				c_Inspection_expirationTimePicker
 						.setValue(TimeUtil.getStr2LocalDate(carInfo.getC_Inspection_expirationTime()));
@@ -127,16 +137,14 @@ public class CarInfoEditDialogController {
 			
 			errorMessage += "请输入姓名";
 		}
-		if (c_identification_cardField.getText() == null || c_identification_cardField.getText().length() == 0) {
-			errorMessage += "请输入身份证号";
+		if (c_annualCycleField.getText() == null || c_annualCycleField.getText().length() == 0) {
+			errorMessage += "请输入车检周期";
 		}
 		if (c_phoneField.getText() == null || c_phoneField.getText().length() == 0) {
 			errorMessage += "请输入电话号码";
 		}
 
-		if (c_addressField.getText() == null || c_addressField.getText().length() == 0) {
-			errorMessage += "请输入家庭地址";
-		}
+	
 
 		if (c_caridField.getText() == null || c_caridField.getText().length() == 0) {
 			errorMessage += "请输入车牌号";

@@ -3,6 +3,8 @@ package com.car.main;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.car.helper.DBHelper;
 import com.car.pojo.CarInfo;
 import com.car.pojo.SendConfPojo;
@@ -25,7 +27,9 @@ public class Main extends Application {
 	private Stage primaryStage;
 	
 	private ObservableList<CarInfo> carInfosData = FXCollections.observableArrayList();
+	private static boolean   isDebug = false;
 	
+	private static Logger logger  = Logger.getLogger(Main.class);
 	private DBHelper dbHelper;
 	public Main () throws Exception {
 		
@@ -42,9 +46,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		primaryStage.setTitle("车检管理系统");
-		new SmsThread().start(); 
+		primaryStage.setTitle("车检管理系统"); 
 		showMain();
+		logger.info("GUI OK");
+		new SmsThread().start();
 	}
 	
 	
@@ -52,7 +57,13 @@ public class Main extends Application {
 	    try {
 	        // Load the fxml file and create a new stage for the popup dialog.
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("../view/CarEditDialog.fxml"));
+	        if (isDebug){
+	        	  loader.setLocation(Main.class.getResource("../view/CarEditDialog.fxml"));
+	        }else{
+		        loader.setLocation(Main.class.getResource("/view/CarEditDialog.fxml"));
+	        }
+
+	      
 	        AnchorPane page = (AnchorPane) loader.load();
 
 	        // Create the dialog Stage.
@@ -82,7 +93,13 @@ public class Main extends Application {
 	    try {
 	        // Load the fxml file and create a new stage for the popup dialog.
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("../view/MsgDialog.fxml"));
+	        if(isDebug){
+	        	  loader.setLocation(Main.class.getResource("../view/MsgDialog.fxml"));
+
+	        }else{
+		        loader.setLocation(Main.class.getResource("/view/MsgDialog.fxml"));
+	        }
+
 	        AnchorPane page = (AnchorPane) loader.load();
 
 	        // Create the dialog Stage.
@@ -113,7 +130,12 @@ public class Main extends Application {
 		try {
 
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("../view/CarOverview.fxml"));
+            if (isDebug){
+            	loader.setLocation(Main.class.getResource("../view/CarOverview.fxml"));
+            }else{
+    			loader.setLocation(Main.class.getResource("/view/CarOverview.fxml"));
+            }
+
 			AnchorPane personOverview = (AnchorPane) loader.load();
 			Scene scene = new Scene(personOverview);
 			CarInfoOverVierController carInfoOverVierController = loader.getController();
@@ -129,6 +151,9 @@ public class Main extends Application {
 
 	
 	public static void main(String[] args) {
+		if(args[0].equals("debug")){
+			isDebug = true;
+		}
 		launch(args);
 	}
 }

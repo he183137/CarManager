@@ -36,15 +36,7 @@
                               <Insets left="25.0" />
                            </padding>
                         </Label>
-                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="身份证" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                           <padding>
-                              <Insets left="25.0" />
-                           </padding>
-                        </Label>
-                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="车牌号" GridPane.rowIndex="3">
+                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="车牌号" GridPane.rowIndex="1">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -60,7 +52,7 @@
                               <Insets left="25.0" />
                            </padding>
                         </Label>
-                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="家庭住址" GridPane.rowIndex="4">
+                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="车检周期" GridPane.rowIndex="3">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -68,7 +60,7 @@
                               <Insets left="25.0" />
                            </padding>
                         </Label>
-                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="年检时间" GridPane.rowIndex="5">
+                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" text="年检时间" GridPane.rowIndex="4">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -77,14 +69,13 @@
                            </padding>
                         </Label>
                         <TextField fx:id="c_nameField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="c_identification_cardField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="c_caridField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets></TextField>
                         <TextField fx:id="c_phoneField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="c_caridField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextArea fx:id="c_addressField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <DatePicker fx:id="c_Inspection_expirationTimePicker" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="c_annualCycleField" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="c_Inspection_expirationTimePicker" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                      <opaqueInsets>
                         <Insets right="10.0" />

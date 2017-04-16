@@ -28,13 +28,10 @@ public class CommonUtil {
 		Map<String, String> parm_map = new HashMap<>();
 		parm_map.put("id", carInfo.getC_id());
 		parm_map.put("carID", carInfo.getC_car_id());
-		parm_map.put("address", carInfo.getC_address());
-		parm_map.put("PersonID", carInfo.getC_identification_card());
+		parm_map.put("annualCycle", String.valueOf(carInfo.getC_annual_cycle()));
 		parm_map.put("InspectionTime", carInfo.getC_Inspection_expirationTime());
 		parm_map.put("name", carInfo.getC_name());
 		parm_map.put("phone", carInfo.getC_phone());
-		// parm_map.put("InsuranceTime",
-		// carInfo.getC_Insurance_expirationTime());
 		return parm_map;
 
 	}
@@ -57,12 +54,5 @@ public class CommonUtil {
 		return msgTempleteInVar;
 	}
 	
-//	public static void main(String[] args) {
-//		CarInfo carInfo = new CarInfo();
-//		carInfo.setC_name("hep");
-//		carInfo.setC_car_id("426");
-//		carInfo.setC_Inspection_expirationTime("04-26");
-//		String string = CommonUtil.parseMsgTemplete(carInfo, "${name} 您好：\n\n 您的${carID}车险将要到期，到期时间为${InspectionTime},请及时办理。");
-//		System.err.println(string);
-//	}
+
 }

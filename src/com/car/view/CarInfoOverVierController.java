@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.car.helper.DBHelper;
@@ -31,6 +32,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import jdk.nashorn.internal.ir.CatchNode;
 
 public class CarInfoOverVierController {
 	@FXML
@@ -42,9 +44,9 @@ public class CarInfoOverVierController {
 	@FXML
 	private TableColumn<CarInfo, String> c_name;
 	@FXML
-	private TableColumn<CarInfo, String> c_identification_card;
-	@FXML
-	private TableColumn<CarInfo, String> c_address;
+	private TableColumn<CarInfo, Number> c_annual_cycle;
+//	@FXML
+//	private TableColumn<CarInfo, String> c_address;
 	@FXML
 	private TableColumn<CarInfo, String> c_phone;
 	@FXML
@@ -86,15 +88,18 @@ public class CarInfoOverVierController {
 	@FXML
 	private TableColumn<CarInfo, String> c_name2;
 	@FXML
-	private TableColumn<CarInfo, String> c_identification_card2;
-	@FXML
-	private TableColumn<CarInfo, String> c_address2;
+	private TableColumn<CarInfo, Number> c_annual_cycle2;
+//	@FXML
+//	private TableColumn<CarInfo, String> c_address2;
 	@FXML
 	private TableColumn<CarInfo, String> c_phone2;
 	@FXML
 	private TableColumn<CarInfo, String> c_car_id2;
 	@FXML
 	private TableColumn<CarInfo, String> c_Inspection_expirationTime2;
+	
+	@FXML
+	private TextField search_text;
 	
 	
 	private ObservableList<CarInfo> expriedCarList = FXCollections.observableArrayList();
@@ -125,8 +130,8 @@ public class CarInfoOverVierController {
 		dbHelper = DBHelper.getInstance();
 		c_id.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
 		c_name.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
-		c_identification_card.setCellValueFactory(cellData -> cellData.getValue().getC_identification_cardProperty());
-		c_address.setCellValueFactory(cellData -> cellData.getValue().getC_addressProperty());
+		c_annual_cycle.setCellValueFactory(cellData -> cellData.getValue().getC_annual_cycleProperty());
+//		c_address.setCellValueFactory(cellData -> cellData.getValue().getC_addressProperty());
 		c_phone.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
 		c_car_id.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
 		c_Inspection_expirationTime
@@ -292,15 +297,16 @@ public class CarInfoOverVierController {
 				expriedCarList.clear();
 			}
 			expriedCarList.addAll(lists);
+			initTableData(expriedCarList, carTable2);
 			carTable2.setItems(expriedCarList);	
-			c_id2.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
-			c_name2.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
-			c_identification_card2.setCellValueFactory(cellData -> cellData.getValue().getC_identification_cardProperty());
-			c_address2.setCellValueFactory(cellData -> cellData.getValue().getC_addressProperty());
-			c_phone2.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
-			c_car_id2.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
-			c_Inspection_expirationTime2
-					.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
+//			c_id2.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
+//			c_name2.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
+//			c_annual_cycle2.setCellValueFactory(cellData -> cellData.getValue().getC_annual_cycleProperty());
+////			c_address2.setCellValueFactory(cellData -> cellData.getValue().getC_addressProperty());
+//			c_phone2.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
+//			c_car_id2.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
+//			c_Inspection_expirationTime2
+//					.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
 		}
 	}
 	
@@ -332,7 +338,7 @@ public class CarInfoOverVierController {
 				smsPojo.setId(UUID.randomUUID().toString());
 				smsPojo.setInfoId(carInfo.getC_id().toString());
 				smsPojo.setPhone(carInfo.getC_phone());
-				smsPojo.setMessage(CommonUtil.parseMsgTemplete(carInfo, new SendConfPojo().getMsgTemplete()));
+				smsPojo.setMessage(CommonUtil.parseMsgTemplete(carInfo, sendConfPojo.getMsgTemplete()));
 				Date date  = new Date();
 				smsPojo.setSendDate(date);
 			    smsPojo.setCreateDate(new Date());
@@ -355,4 +361,62 @@ public class CarInfoOverVierController {
 	        	dbHelper.updateMsgConf(this.sendConfPojo);
 	    }
 	}
+	
+	@FXML
+	
+	private void handleSearch4Name() throws Exception{
+		 List<CarInfo> list = null;
+		String search_name = search_text.getText();
+		try{
+			if(StringUtils.isEmpty(search_name)){
+				 list =  dbHelper.getAllCarInfo();
+			  }else{
+				 list =  dbHelper.getCarInfoByName(search_name);
+			  }
+			if(list ==null || list.isEmpty()){
+				FxDialogs.showInformation("查询结果","查询结果为空");
+				
+			}
+			ObservableList<CarInfo> carInfos = Main.getCarInfosData();
+			carInfos.clear();
+			carInfos.setAll(list);
+			initTableData(carInfos, carTable);
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			logger.error(e);
+		}
+}
+	
+	
+	
+	@FXML
+	private void refreshCarInfo(){
+		try{
+			List<CarInfo> list = dbHelper.getAllCarInfo();
+			ObservableList<CarInfo> carInfos  = Main.getCarInfosData();
+			if(!carInfos.isEmpty()){
+				carInfos.clear();
+				carInfos.addAll(list);
+			}
+			initTableData(carInfos, carTable);
+		}catch (Exception e) {
+			// TODO: handle exception
+			logger.error(e);
+		}
+		
+			
+	}
+	
+	private void initTableData(ObservableList<CarInfo> list,TableView<CarInfo> table ){
+		table.setItems(list);
+		c_id.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
+		c_name.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
+		c_annual_cycle.setCellValueFactory(cellData -> cellData.getValue().getC_annual_cycleProperty());
+		c_phone.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
+		c_car_id.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
+		c_Inspection_expirationTime
+				.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
+	}
+		
 }

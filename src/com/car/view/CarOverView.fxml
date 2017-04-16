@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
@@ -20,12 +21,19 @@
                            <children>
                               <HBox alignment="TOP_RIGHT" layoutY="29.0" prefHeight="54.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                                  <children>
+                                    <TextField fx:id="search_text" promptText="请输入姓名" />
+                                    <Button mnemonicParsing="false" onAction="#handleSearch4Name" style="-fx-background-image: url(../../../../img/search.png); -fx-border-color: #888888;" text="查询" />
                                     <Button mnemonicParsing="false" onAction="#handleNewCarInfo" style="-fx-background-color: #33FFAA; -fx-border-color: #888888;" text="添加" />
                                     <Button mnemonicParsing="false" onAction="#handleEditPerson" style="-fx-background-color: #FFFF33; -fx-border-color: #888888;" text="修改" />
                                     <Button mnemonicParsing="false" onAction="#handleDeleteCar" style="-fx-background-color: #FF7744; -fx-border-color: #888888;" text="删除">
                                        <HBox.margin>
-                                          <Insets right="10.0" />
+                                          <Insets />
                                        </HBox.margin></Button>
+                                    <Button mnemonicParsing="false" onAction="#refreshCarInfo" style="-fx-background-color: #5599FF; -fx-border-color: #888888;" text="刷新">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
                                  </children>
                                  <padding>
                                     <Insets top="4.0" />
@@ -35,7 +43,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <TableView fx:id="carTable" editable="true" prefHeight="308.0" prefWidth="598.0" style="-fx-border-color: white;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="carTable" editable="true" layoutY="-2.0" prefHeight="308.0" prefWidth="598.0" style="-fx-border-color: white;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
                                  <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
@@ -45,8 +53,7 @@
                                     <TableColumn fx:id="c_car_id" prefWidth="75.0" text="车牌号" />
                                     <TableColumn fx:id="c_Inspection_expirationTime" prefWidth="75.0" text="年检时间" />
                                     <TableColumn fx:id="c_phone" prefWidth="75.0" text="联系电话" />
-                                    <TableColumn fx:id="c_identification_card" prefWidth="75.0" text="身份证" />
-                                    <TableColumn fx:id="c_address" prefWidth="75.0" text="家庭住址" />
+                                    <TableColumn fx:id="c_annual_cycle" prefWidth="75.0" text="车检周期" />
                                  </columns>
                                  <opaqueInsets>
                                     <Insets />
@@ -93,17 +100,19 @@
                         </HBox>
                      </top>
                      <center>
-                        <TableView fx:id="carTable2" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="carTable2" BorderPane.alignment="CENTER">
                           <columns>
                             <TableColumn fx:id="c_id2" prefWidth="75.0" text="ID" visible="false" />
                             <TableColumn fx:id="c_name2" prefWidth="75.0" text="姓名" />
-                              <TableColumn fx:id="c_identification_card2" prefWidth="75.0" text="身份证" />
                               <TableColumn fx:id="c_car_id2" prefWidth="75.0" text="车牌号" />
                               <TableColumn fx:id="c_Inspection_expirationTime2" prefWidth="75.0" text="年检时间" />
+                              <TableColumn fx:id="c_annual_cycle2" prefWidth="75.0" text="车检周期" />
                               <TableColumn fx:id="c_phone2" prefWidth="75.0" text="联系电话" />
-                              <TableColumn fx:id="c_address2" prefWidth="75.0" text="家庭住址" />
-                              <TableColumn prefWidth="75.0" text="发送状态" />
+                              <TableColumn prefWidth="75.0" text="发送状态" visible="false" />
                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                      </center>
                   </BorderPane>
@@ -115,7 +124,7 @@
                      <bottom>
                         <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button fx:id="testSMS" mnemonicParsing="false" onAction="#handlerTestConf" style="-fx-border-color: #696969;" text="测试">
+                              <Button fx:id="testSMS" mnemonicParsing="false" onAction="#handlerTestConf" style="-fx-border-color: #696969;" text="测试" visible="false">
                                  <HBox.margin>
                                     <Insets bottom="20.0" />
                                  </HBox.margin>
