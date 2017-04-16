@@ -338,7 +338,7 @@ public class CarInfoOverVierController {
 				smsPojo.setId(UUID.randomUUID().toString());
 				smsPojo.setInfoId(carInfo.getC_id().toString());
 				smsPojo.setPhone(carInfo.getC_phone());
-				smsPojo.setMessage(CommonUtil.parseMsgTemplete(carInfo, sendConfPojo.getMsgTemplete()));
+				smsPojo.setMessage(CommonUtil.parseMsgTemplete(carInfo, this.sendConfPojo.getMsgTemplete()));
 				Date date  = new Date();
 				smsPojo.setSendDate(date);
 			    smsPojo.setCreateDate(new Date());
