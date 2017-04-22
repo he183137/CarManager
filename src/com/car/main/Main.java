@@ -151,9 +151,13 @@ public class Main extends Application {
 
 	
 	public static void main(String[] args) {
-		if(args[0].equals("debug")){
+		if(args.length==0){
+			isDebug = false;
+			
+		}else if(args[0].equals("debug")){
 			isDebug = true;
 		}
+		
 		launch(args);
 	}
 }
