@@ -13,6 +13,7 @@ import com.car.pojo.CarInfo;
 import com.car.pojo.Confpojo;
 import com.car.pojo.SendConfPojo;
 import com.car.util.JdbcUtils;
+import com.car.util.TimeUtil;
 
 
 /**
@@ -113,7 +114,7 @@ public class DBHelper {
                 "t.c_car_id" +   
                 " from t_info t " +
                 "where c_name like '%"+name+"%'";
-        logger.info(sql);
+        logger.debug(sql);
         List<Map<String, Object>> reslut_list =  jdbcUtils.findModeResult(sql, null);
         if(reslut_list.isEmpty()){
         	return null;
@@ -137,7 +138,46 @@ public class DBHelper {
     }
 
     /**
-     * 鍒犻櫎鐢ㄦ埛
+     * 获取年检小于当前时间的车辆信息
+     * @return
+     * @throws Exception
+     */
+    private List<CarInfo> getCarByPreviousTime() throws Exception  {
+    	 String sql = "select c_id, " +
+                 "t.c_annual_cycle," +
+                 "t.c_Inspection_expirationTime," +
+                 "t.c_name," +
+                 "t.c_phone," +
+                 "t.c_car_id" +   
+                 " from t_info t " +
+                 " where c_Inspection_expirationTime<date('now')";
+    	 List<Map<String, Object>> reslut_list =  jdbcUtils.findModeResult(sql, null);
+         if(reslut_list.isEmpty()){
+         	return null;
+         }
+         Iterator<Map<String,Object>> iterator = reslut_list.iterator();
+         List<CarInfo> carInfo_list = new ArrayList<>();
+         while(iterator.hasNext()){
+         	Map<String, Object> map_res = iterator.next();
+         	CarInfo carInfo = new CarInfo();
+         	int c_annual_cycle = Integer.parseInt(map_res.get("c_annual_cycle").toString());
+         	carInfo.setC_annual_cycle(c_annual_cycle);
+         	carInfo.setC_car_id(map_res.get("c_car_id").toString());
+         	carInfo.setC_id(map_res.get("c_id").toString());
+
+         	carInfo.setC_Inspection_expirationTime(TimeUtil.addYear(map_res.get("c_Inspection_expirationTime").toString(), c_annual_cycle));
+         	carInfo.setC_name(map_res.get("c_name").toString());
+         	carInfo.setC_phone(map_res.get("c_phone").toString());
+         	carInfo_list.add(carInfo);
+         }
+         jdbcUtils.releaseResultSet();
+         return carInfo_list;
+    }
+    
+    
+    
+    /**
+     * 删除单个car
      *
      * @param CarInfo
      * @throws Exception
@@ -168,7 +208,22 @@ public class DBHelper {
             }
         }
      }
-
+ 
+    /**
+     * 根据车检时长，修改年检时间
+     * @param cars
+     * @throws Exception
+     */
+    public void updateCarExpirationTime () throws Exception {
+    	List<CarInfo> list = getCarByPreviousTime();
+    	if (list!=null && !list.isEmpty()){
+    		updateCarInfos(list);
+    	}else{
+    		logger.info("没有过期车辆");
+    	}
+    	
+    }
+    
     /**
      * 批量修改
      * @param cars
@@ -211,6 +266,12 @@ public class DBHelper {
        }
         return  flag;
     }
+    
+    
+    
+    
+    
+    
     /***
      *添加车辆信息
      */
@@ -400,9 +461,11 @@ public class DBHelper {
     public void closeConn(){
     	jdbcUtils.releaseConn();
     }
+    
+    
     public static void main(String[] args) throws Exception {
-    	SendConfPojo confPojo = DBHelper.getInstance().getMsgConf();
-    	System.out.println(confPojo.getCountDown());
+    	
+    	DBHelper.getInstance().updateCarExpirationTime();
     }
 }
 

@@ -298,15 +298,14 @@ public class CarInfoOverVierController {
 			}
 			expriedCarList.addAll(lists);
 			initTableData2(expriedCarList, carTable2);
-//			c_id2.setCellValueFactory(cellData -> cellData.getValue().getC_idProperty());
-//			c_name2.setCellValueFactory(cellData -> cellData.getValue().getC_nameProperty());
-//			c_annual_cycle2.setCellValueFactory(cellData -> cellData.getValue().getC_annual_cycleProperty());
-////			c_address2.setCellValueFactory(cellData -> cellData.getValue().getC_addressProperty());
-//			c_phone2.setCellValueFactory(cellData -> cellData.getValue().getC_phoneProperty());
-//			c_car_id2.setCellValueFactory(cellData -> cellData.getValue().getC_car_idProperty());
-//			c_Inspection_expirationTime2
-//					.setCellValueFactory(cellData -> cellData.getValue().getC_Inspection_expirationTimeProperty());
 		}
+		try{//车辆自动续期年检时间
+			dbHelper.updateCarExpirationTime();	
+		}catch (Exception e) {
+			// TODO: handle exception
+			logger.error("修改车辆年检异常",e);
+		}
+		
 	}
 	
 	@FXML

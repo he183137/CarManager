@@ -3,6 +3,7 @@ package com.car.util;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -27,7 +28,7 @@ public class TimeUtil {
 	 * @throws Exception
 	 */
 	public static boolean isExpired(int countDown, String expiredTime) throws Exception {
-		  boolean isExpired = false;
+		    boolean isExpired = false;
 	        SimpleDateFormat sdf =   new SimpleDateFormat(time_fomat_str);
 	        Date expiredDate= sdf.parse(expiredTime);
 	        Date currentDate =  sdf.parse(sdf.format(new Date()));
@@ -39,12 +40,32 @@ public class TimeUtil {
 	                isExpired = true;
 	            }
 	        }else{
-	            log.error("Date is Invalid! ");
+	            log.error("过期时间小于当前时间");
 	        }
 	        return isExpired;
 	    }
 	
-
+	
+	
+    /**
+     * 增加年
+     * @param expiredTime
+     * @param c_annual_cycle
+     * @return
+     * @throws Exception
+     */
+    public static String addYear(String expiredTime , int c_annual_cycle) throws Exception{
+    	SimpleDateFormat sdf =   new SimpleDateFormat(time_fomat_str);
+	    Date expiredDate= sdf.parse(expiredTime);
+    	sdf =   new SimpleDateFormat(time_fomat_str);
+	    expiredDate= sdf.parse(expiredTime);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(expiredDate);
+        calendar.add(Calendar.YEAR, c_annual_cycle);
+        Date finalData = calendar.getTime();
+        return sdf.format(finalData);
+    	
+    }
 	public static LocalDate getStr2LocalDate(String timestr) {
 		if (timestr != null && !"".equals(timestr)) {
 			DateTimeFormatter format = DateTimeFormatter.ofPattern(time_fomat_str);
@@ -63,6 +84,5 @@ public class TimeUtil {
 		return localDate.format(format);
 
 	}
-
 
 }
